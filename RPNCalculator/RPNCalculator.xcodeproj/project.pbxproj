@@ -20,6 +20,7 @@
 		046A296B14E4498400EE6DA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046A294C14E4498300EE6DA9 /* Foundation.framework */; };
 		046A297314E4498400EE6DA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 046A297114E4498400EE6DA9 /* InfoPlist.strings */; };
 		046A297614E4498400EE6DA9 /* RPNCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A297514E4498400EE6DA9 /* RPNCalculatorTests.m */; };
+		046A298414E4608200EE6DA9 /* RPNBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A298314E4608200EE6DA9 /* RPNBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		046A297214E4498400EE6DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		046A297414E4498400EE6DA9 /* RPNCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNCalculatorTests.h; sourceTree = "<group>"; };
 		046A297514E4498400EE6DA9 /* RPNCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNCalculatorTests.m; sourceTree = "<group>"; };
+		046A298214E4608200EE6DA9 /* RPNBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPNBrain.h; path = ../RPNBrain.h; sourceTree = "<group>"; };
+		046A298314E4608200EE6DA9 /* RPNBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPNBrain.m; path = ../RPNBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 		046A295014E4498300EE6DA9 /* RPNCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				046A298214E4608200EE6DA9 /* RPNBrain.h */,
+				046A298314E4608200EE6DA9 /* RPNBrain.m */,
 				046A295914E4498300EE6DA9 /* RPNAppDelegate.h */,
 				046A295A14E4498400EE6DA9 /* RPNAppDelegate.m */,
 				046A295C14E4498400EE6DA9 /* MainStoryboard.storyboard */,
@@ -260,6 +265,7 @@
 				046A295714E4498300EE6DA9 /* main.m in Sources */,
 				046A295B14E4498400EE6DA9 /* RPNAppDelegate.m in Sources */,
 				046A296114E4498400EE6DA9 /* RPNViewController.m in Sources */,
+				046A298414E4608200EE6DA9 /* RPNBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
