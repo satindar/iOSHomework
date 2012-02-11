@@ -16,7 +16,7 @@
 
 @synthesize programStack = _programStack;
 
-- (NSMutableArray *)programStack // aded only as an exercise
+- (NSMutableArray *)programStack 
 {
     if (!_programStack) {
         _programStack = [[NSMutableArray alloc] init];
@@ -29,17 +29,27 @@
     if (self.programStack) [self.programStack removeAllObjects];
 }
 
+- (void)clearLastOperand
+{
+    if (_programStack) [self.programStack removeLastObject];
+}
+
 - (void)pushOperand:(double)operand
 {
     NSNumber *operandObject = [NSNumber numberWithDouble:operand];
     [self.programStack addObject:operandObject];
 }
 
+- (void)pushVariable:(NSString *)variable
+{
+    [self.programStack addObject:variable];
+}
 
-- (double)performOperation:(NSString *)operation
+
+- (double)performOperation:(NSString *)operation usingVariableValues:(NSDictionary *)variableValues
 {
     [self.programStack addObject:operation];
-    return [RPNBrain runProgram:self.program];
+    return [RPNBrain runProgram:self.program usingVariableValues:variableValues];
 }
 
 - (id)program
@@ -47,11 +57,73 @@
     return [self.programStack copy]; // returns immutable array, protects internal data
 }
 
++ (BOOL)isTwoOperandOperation:(NSString *)operation
+{
+    if ([operation isEqualToString:@"+"]) return YES;
+    if ([operation isEqualToString:@"-"]) return YES;
+    if ([operation isEqualToString:@"*"]) return YES;
+    if ([operation isEqualToString:@"/"]) return YES;
+    return NO;
+}
+
++ (BOOL)isOneOperandOperation:(NSString *)operation
+{
+    if ([operation isEqualToString:@"cos"]) return YES;
+    if ([operation isEqualToString:@"sin"]) return YES;
+    if ([operation isEqualToString:@"sqrt"]) return YES;
+    return NO;
+
+}
+
++ (BOOL)isZeroOperandOperation:(NSString *)operation
+{
+    if ([operation isEqualToString:@"pi"]) return YES;
+    return NO;
+}
+
++ (BOOL)isVariable:(NSString *)operation
+{
+    if ([operation isEqualToString:@"x"]) return YES;
+    if ([operation isEqualToString:@"a"]) return YES;
+    if ([operation isEqualToString:@"b"]) return YES;
+    return NO;
+}
+
++ (NSString *)descriptionOfTopOfStack:(NSMutableArray *)stack 
+{
+    NSString *description = [NSString stringWithString:@""]; 
+    
+    id topOfStack = [stack lastObject];
+    if (topOfStack) [stack removeLastObject];
+    
+    if ([topOfStack isKindOfClass:[NSNumber class]]) {
+        description = [NSString stringWithFormat:@"%g", [topOfStack doubleValue]];
+    } else if ([topOfStack isKindOfClass:[NSString class]]) {
+        NSString *operation = topOfStack;
+        if ([self isTwoOperandOperation:operation]) {
+            description = [NSString stringWithFormat:@"%@ %@ %@", [self descriptionOfTopOfStack:stack], operation, [self descriptionOfTopOfStack:stack]];
+        } else if ([self isOneOperandOperation:operation]) {
+            description = [NSString stringWithFormat:@"%@(%@)", operation, [self descriptionOfTopOfStack:stack]];
+        } else if ([self isZeroOperandOperation:operation]) {
+            description = [NSString stringWithFormat:@"%@", operation];
+        } else if ([self isVariable:operation]) {
+            description = [NSString stringWithFormat:@"%@", operation];
+        }
+    }
+    return description;
+}
+
 + (NSString *)descriptionOfProgram:(id)program
 {
-    return @"Implement this in assignment 2";
-    // use recursion to to implement this
+    NSMutableArray *stack;
+    if ([program isKindOfClass:[NSArray class]]) {
+        stack = [program mutableCopy]; // returns an object (id)
+        
+    }
+    return [self descriptionOfTopOfStack:stack];
 }
+
+
 
 + (double)popOperandOffStack:(NSMutableArray *)stack
 {
@@ -96,22 +168,41 @@
     return [self popOperandOffStack:stack];   
 }
 
+
 + (NSSet *)variablesUsedInProgram:(id)program
 {
-    // Implement class method here
-    // Initialize set
-    // enumerate through program
-    // add variables to NSSet (containing NSString objects)
-    // return nil if there are no variables used
+    NSMutableArray *stack = [[NSMutableArray alloc] init];
+    if ([program isKindOfClass:[NSArray class]])  {
+        stack = [program mutableCopy];
+    }
+    NSMutableSet *variablesUsed = [[NSMutableSet alloc] init];
+    for (id obj in stack) {
+        if ([obj isKindOfClass:[NSString class]]) {
+            if ([@"x" isEqualToString:obj] || [@"a" isEqualToString:obj] || [@"b" isEqualToString:obj]) {
+                [variablesUsed addObject:(NSString *)obj];
+            }
+        }
+    }
+    return (NSSet *)variablesUsed;
 }
 
 + (double)runProgram:(id)program usingVariableValues:(NSDictionary *)variableValues
 {
-    // Implement class method here
-    // convert variable values to operations (use zero if variable has no value assigned)
-    // call runProgram
-    // return result
+    NSMutableArray *stack;
+    if ([program isKindOfClass:[NSArray class]]) {
+        stack = [program mutableCopy];
+        for (int i = 0; i < [stack count]; i++) {
+            id object = [variableValues objectForKey:[stack objectAtIndex:i]];
+            if (object) {
+                [stack replaceObjectAtIndex:i withObject:object];
+            }
+        }
+    }
+    return [self popOperandOffStack:stack];
 }
+
+
+
 @end
 
 

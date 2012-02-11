@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *inputDisplay;
 
+@property (weak, nonatomic) IBOutlet UILabel *variablesUsedDisplay;
+
 @end

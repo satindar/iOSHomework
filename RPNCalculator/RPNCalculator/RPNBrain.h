@@ -11,8 +11,10 @@
 @interface RPNBrain : NSObject
 
 - (void)pushOperand:(double)operand;
-- (double)performOperation:(NSString *)operation;
+- (void)pushVariable:(NSString *)variable;
+- (double)performOperation:(NSString *)operation usingVariableValues:(NSDictionary *)variableValues;
 - (void)clearProgramStack;
+- (void)clearLastOperand;
 
 @property (readonly) id program; 
 
@@ -22,3 +24,8 @@
 + (NSSet *)variablesUsedInProgram:(id)program;
 
 @end
+
+
+
+
+
