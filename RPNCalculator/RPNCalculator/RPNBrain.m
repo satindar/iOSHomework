@@ -59,34 +59,37 @@
 
 + (BOOL)isTwoOperandOperation:(NSString *)operation
 {
-    if ([operation isEqualToString:@"+"]) return YES;
-    if ([operation isEqualToString:@"-"]) return YES;
-    if ([operation isEqualToString:@"*"]) return YES;
-    if ([operation isEqualToString:@"/"]) return YES;
-    return NO;
+    NSSet *twoOperandOperations = [[NSSet alloc] initWithObjects:@"+", @"-", @"*", @"/", nil];
+    return [twoOperandOperations containsObject:operation] ? YES : NO;
 }
 
 + (BOOL)isOneOperandOperation:(NSString *)operation
 {
-    if ([operation isEqualToString:@"cos"]) return YES;
-    if ([operation isEqualToString:@"sin"]) return YES;
-    if ([operation isEqualToString:@"sqrt"]) return YES;
-    return NO;
-
+    NSSet *oneOperandOperations = [[NSSet alloc] initWithObjects:@"sin", @"cos", @"sqrt", nil];
+    return [oneOperandOperations containsObject:operation] ? YES : NO;
 }
 
 + (BOOL)isZeroOperandOperation:(NSString *)operation
 {
-    if ([operation isEqualToString:@"pi"]) return YES;
-    return NO;
+    return [operation isEqualToString:@"pi"] ? YES : NO;
 }
 
 + (BOOL)isVariable:(NSString *)operation
 {
-    if ([operation isEqualToString:@"x"]) return YES;
-    if ([operation isEqualToString:@"a"]) return YES;
-    if ([operation isEqualToString:@"b"]) return YES;
-    return NO;
+    NSSet *variables = [[NSSet alloc] initWithObjects:@"x", @"a", @"b",nil];
+    return [variables containsObject:operation] ? YES : NO;
+}
+
++ (NSString *)removeExtraneousParenthesesAndCommas:(NSString *)description
+{
+    NSString *concantenatedString = description;
+    if ([concantenatedString hasPrefix:@"("] && [concantenatedString hasSuffix:@")"]) {
+        concantenatedString = [concantenatedString substringToIndex:([concantenatedString length] - 1)];
+        concantenatedString = [concantenatedString substringFromIndex:1];
+    }
+    // write implementation to remove redundant inner parentheses
+    // write implementation to remove extra commas 
+    return concantenatedString;
 }
 
 + (NSString *)descriptionOfTopOfStack:(NSMutableArray *)stack 
@@ -101,7 +104,9 @@
     } else if ([topOfStack isKindOfClass:[NSString class]]) {
         NSString *operation = topOfStack;
         if ([self isTwoOperandOperation:operation]) {
-            description = [NSString stringWithFormat:@"%@ %@ %@", [self descriptionOfTopOfStack:stack], operation, [self descriptionOfTopOfStack:stack]];
+            NSString *rightOperand = [self descriptionOfTopOfStack:stack];
+            NSString *leftOperand = [self descriptionOfTopOfStack:stack];
+            description = [NSString stringWithFormat:@"(%@ %@ %@)", leftOperand, operation, rightOperand];
         } else if ([self isOneOperandOperation:operation]) {
             description = [NSString stringWithFormat:@"%@(%@)", operation, [self descriptionOfTopOfStack:stack]];
         } else if ([self isZeroOperandOperation:operation]) {
@@ -109,6 +114,10 @@
         } else if ([self isVariable:operation]) {
             description = [NSString stringWithFormat:@"%@", operation];
         }
+    }
+    if ([stack count]) {
+    // not working fully
+    //    description =[NSString stringWithFormat:@"%@, %@", [self descriptionOfTopOfStack:stack], description];
     }
     return description;
 }
@@ -120,9 +129,8 @@
         stack = [program mutableCopy]; // returns an object (id)
         
     }
-    return [self descriptionOfTopOfStack:stack];
+    return [self removeExtraneousParenthesesAndCommas:[self descriptionOfTopOfStack:stack]];
 }
-
 
 
 + (double)popOperandOffStack:(NSMutableArray *)stack

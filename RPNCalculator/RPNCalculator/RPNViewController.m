@@ -13,7 +13,6 @@
 
 @property (nonatomic) BOOL userIsInTheMiddleOfEnteringANumber;
 @property (nonatomic, strong) RPNBrain *brain;
-@property (nonatomic) BOOL userHasEnteredDecimalPoint;
 @property (nonatomic, strong) NSMutableDictionary *variableTestValues;
 
 @end
@@ -26,7 +25,6 @@
 @synthesize variablesUsedDisplay = _variablesUsedDisplay;
 @synthesize userIsInTheMiddleOfEnteringANumber = _userIsInTheMiddleOfEnteringANumber;
 @synthesize brain = _brain;
-@synthesize userHasEnteredDecimalPoint = _userHasEnteredDecimalPoint;
 @synthesize variableTestValues = _variableTestValues;
 
 - (RPNBrain *)brain
@@ -80,8 +78,8 @@
 - (IBAction)decimalPointPressed:(UIButton *)sender // change implementation to remove bool property
 {
     NSString *decimal = @".";
-    if (!self.userHasEnteredDecimalPoint) {
-        self.userHasEnteredDecimalPoint = YES;
+    NSRange range = [self.display.text rangeOfString:decimal];
+    if (range.location == NSNotFound) {
         if (self.userIsInTheMiddleOfEnteringANumber) {
             self.display.text = [self.display.text stringByAppendingString:decimal];
         } else {
@@ -98,7 +96,6 @@
     }
     [self updateDisplays];
     self.userIsInTheMiddleOfEnteringANumber = NO;
-    self.userHasEnteredDecimalPoint = NO;
 }
 
 - (IBAction)variablePressed:(id)sender 
@@ -111,7 +108,6 @@
     self.display.text = variable;
     [self updateDisplays];
     self.userIsInTheMiddleOfEnteringANumber = NO;
-    self.userHasEnteredDecimalPoint = NO;
 }
 
 
@@ -129,7 +125,6 @@
 - (IBAction)clearPressed:(UIButton *)sender 
 {
     [self.brain clearProgramStack];
-    self.userHasEnteredDecimalPoint = NO;
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.display.text = @"0";
     self.inputDisplay.text = @"";
@@ -140,9 +135,8 @@
 {
     if (self.userIsInTheMiddleOfEnteringANumber) {
         self.display.text = [self.display.text substringToIndex:[self.display.text length] - 1];
-        if ([self.display.text length] < 1) {
+        if (([self.display.text length] < 1) || [self.display.text isEqualToString:@"0"]) {
             self.userIsInTheMiddleOfEnteringANumber = NO;
-            self.userHasEnteredDecimalPoint = NO;
             double priorResult = [RPNBrain runProgram:self.brain.program usingVariableValues:self.variableTestValues];
             self.display.text = [NSString stringWithFormat:@"%g", priorResult];
             [self updateDisplays];
