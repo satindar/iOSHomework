@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0449A89615A74A1000D1D296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0449A89515A74A1000D1D296 /* UIKit.framework */; };
+		0449A89815A74A1000D1D296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0449A89715A74A1000D1D296 /* Foundation.framework */; };
+		0449A89A15A74A1000D1D296 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0449A89915A74A1000D1D296 /* CoreGraphics.framework */; };
+		0449A8A015A74A1000D1D296 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0449A89E15A74A1000D1D296 /* InfoPlist.strings */; };
+		0449A8A215A74A1000D1D296 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449A8A115A74A1000D1D296 /* main.m */; };
+		0449A8A615A74A1000D1D296 /* GrapherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449A8A515A74A1000D1D296 /* GrapherAppDelegate.m */; };
+		0449A8A915A74A1000D1D296 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0449A8A715A74A1000D1D296 /* iPhone.storyboard */; };
+		0449A8AC15A74A1000D1D296 /* GrapherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449A8AB15A74A1000D1D296 /* GrapherViewController.m */; };
+		0449A8B415A74A1000D1D296 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0449A8B315A74A1000D1D296 /* SenTestingKit.framework */; };
+		0449A8B515A74A1000D1D296 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0449A89515A74A1000D1D296 /* UIKit.framework */; };
+		0449A8B615A74A1000D1D296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0449A89715A74A1000D1D296 /* Foundation.framework */; };
+		0449A8BE15A74A1000D1D296 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0449A8BC15A74A1000D1D296 /* InfoPlist.strings */; };
+		0449A8C115A74A1000D1D296 /* GrapherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449A8C015A74A1000D1D296 /* GrapherTests.m */; };
+		0449A8CC15A7756500D1D296 /* GrapherBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449A8CB15A7756500D1D296 /* GrapherBrain.m */; };
+		049ABADD15ABFB7E00C4F766 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049ABADC15ABFB7E00C4F766 /* iPad.storyboard */; };
+		049ABB7915ACD90F00C4F766 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB7815ACD90F00C4F766 /* GraphView.m */; };
+		049ABB7C15ACDABE00C4F766 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB7B15ACDABE00C4F766 /* GraphViewController.m */; };
+		049ABB8815AD44DF00C4F766 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ABB8715AD44DE00C4F766 /* AxesDrawer.m */; };
+		04B0698C15AF5BC20013D700 /* GrapherProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0698B15AF5BC20013D700 /* GrapherProgramsTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0449A8B715A74A1000D1D296 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0449A88815A74A0F00D1D296 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0449A89015A74A1000D1D296;
+			remoteInfo = Grapher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0449A89115A74A1000D1D296 /* Grapher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0449A89515A74A1000D1D296 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0449A89715A74A1000D1D296 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0449A89915A74A1000D1D296 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0449A89D15A74A1000D1D296 /* Grapher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grapher-Info.plist"; sourceTree = "<group>"; };
+		0449A89F15A74A1000D1D296 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0449A8A115A74A1000D1D296 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0449A8A315A74A1000D1D296 /* Grapher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grapher-Prefix.pch"; sourceTree = "<group>"; };
+		0449A8A415A74A1000D1D296 /* GrapherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrapherAppDelegate.h; sourceTree = "<group>"; };
+		0449A8A515A74A1000D1D296 /* GrapherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapherAppDelegate.m; sourceTree = "<group>"; };
+		0449A8A815A74A1000D1D296 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		0449A8AA15A74A1000D1D296 /* GrapherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrapherViewController.h; sourceTree = "<group>"; };
+		0449A8AB15A74A1000D1D296 /* GrapherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapherViewController.m; sourceTree = "<group>"; };
+		0449A8B215A74A1000D1D296 /* GrapherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrapherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0449A8B315A74A1000D1D296 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0449A8BB15A74A1000D1D296 /* GrapherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrapherTests-Info.plist"; sourceTree = "<group>"; };
+		0449A8BD15A74A1000D1D296 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0449A8BF15A74A1000D1D296 /* GrapherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrapherTests.h; sourceTree = "<group>"; };
+		0449A8C015A74A1000D1D296 /* GrapherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapherTests.m; sourceTree = "<group>"; };
+		0449A8CA15A7756500D1D296 /* GrapherBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrapherBrain.h; sourceTree = "<group>"; };
+		0449A8CB15A7756500D1D296 /* GrapherBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrapherBrain.m; sourceTree = "<group>"; };
+		049ABADC15ABFB7E00C4F766 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		049ABB7715ACD90F00C4F766 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		049ABB7815ACD90F00C4F766 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		049ABB7A15ACDABE00C4F766 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphViewController.h; path = ../GraphViewController.h; sourceTree = "<group>"; };
+		049ABB7B15ACDABE00C4F766 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphViewController.m; path = ../GraphViewController.m; sourceTree = "<group>"; };
+		049ABB8615AD44DE00C4F766 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
+		049ABB8715AD44DE00C4F766 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
+		04B0698A15AF5BC20013D700 /* GrapherProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrapherProgramsTableViewController.h; sourceTree = "<group>"; };
+		04B0698B15AF5BC20013D700 /* GrapherProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrapherProgramsTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0449A88E15A74A1000D1D296 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0449A89615A74A1000D1D296 /* UIKit.framework in Frameworks */,
+				0449A89815A74A1000D1D296 /* Foundation.framework in Frameworks */,
+				0449A89A15A74A1000D1D296 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0449A8AE15A74A1000D1D296 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0449A8B415A74A1000D1D296 /* SenTestingKit.framework in Frameworks */,
+				0449A8B515A74A1000D1D296 /* UIKit.framework in Frameworks */,
+				0449A8B615A74A1000D1D296 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0449A88615A74A0F00D1D296 = {
+			isa = PBXGroup;
+			children = (
+				0449A89B15A74A1000D1D296 /* Grapher */,
+				0449A8B915A74A1000D1D296 /* GrapherTests */,
+				0449A89415A74A1000D1D296 /* Frameworks */,
+				0449A89215A74A1000D1D296 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0449A89215A74A1000D1D296 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0449A89115A74A1000D1D296 /* Grapher.app */,
+				0449A8B215A74A1000D1D296 /* GrapherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0449A89415A74A1000D1D296 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0449A89515A74A1000D1D296 /* UIKit.framework */,
+				0449A89715A74A1000D1D296 /* Foundation.framework */,
+				0449A89915A74A1000D1D296 /* CoreGraphics.framework */,
+				0449A8B315A74A1000D1D296 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0449A89B15A74A1000D1D296 /* Grapher */ = {
+			isa = PBXGroup;
+			children = (
+				0449A8A415A74A1000D1D296 /* GrapherAppDelegate.h */,
+				0449A8A515A74A1000D1D296 /* GrapherAppDelegate.m */,
+				0449A8A715A74A1000D1D296 /* iPhone.storyboard */,
+				049ABADC15ABFB7E00C4F766 /* iPad.storyboard */,
+				04B0698A15AF5BC20013D700 /* GrapherProgramsTableViewController.h */,
+				04B0698B15AF5BC20013D700 /* GrapherProgramsTableViewController.m */,
+				049ABB7A15ACDABE00C4F766 /* GraphViewController.h */,
+				049ABB7B15ACDABE00C4F766 /* GraphViewController.m */,
+				049ABB7715ACD90F00C4F766 /* GraphView.h */,
+				049ABB7815ACD90F00C4F766 /* GraphView.m */,
+				0449A8CA15A7756500D1D296 /* GrapherBrain.h */,
+				0449A8CB15A7756500D1D296 /* GrapherBrain.m */,
+				0449A8AA15A74A1000D1D296 /* GrapherViewController.h */,
+				0449A8AB15A74A1000D1D296 /* GrapherViewController.m */,
+				049ABB8615AD44DE00C4F766 /* AxesDrawer.h */,
+				049ABB8715AD44DE00C4F766 /* AxesDrawer.m */,
+				0449A89C15A74A1000D1D296 /* Supporting Files */,
+			);
+			path = Grapher;
+			sourceTree = "<group>";
+		};
+		0449A89C15A74A1000D1D296 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0449A89D15A74A1000D1D296 /* Grapher-Info.plist */,
+				0449A89E15A74A1000D1D296 /* InfoPlist.strings */,
+				0449A8A115A74A1000D1D296 /* main.m */,
+				0449A8A315A74A1000D1D296 /* Grapher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0449A8B915A74A1000D1D296 /* GrapherTests */ = {
+			isa = PBXGroup;
+			children = (
+				0449A8BF15A74A1000D1D296 /* GrapherTests.h */,
+				0449A8C015A74A1000D1D296 /* GrapherTests.m */,
+				0449A8BA15A74A1000D1D296 /* Supporting Files */,
+			);
+			path = GrapherTests;
+			sourceTree = "<group>";
+		};
+		0449A8BA15A74A1000D1D296 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0449A8BB15A74A1000D1D296 /* GrapherTests-Info.plist */,
+				0449A8BC15A74A1000D1D296 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0449A89015A74A1000D1D296 /* Grapher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0449A8C415A74A1000D1D296 /* Build configuration list for PBXNativeTarget "Grapher" */;
+			buildPhases = (
+				0449A88D15A74A1000D1D296 /* Sources */,
+				0449A88E15A74A1000D1D296 /* Frameworks */,
+				0449A88F15A74A1000D1D296 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Grapher;
+			productName = Grapher;
+			productReference = 0449A89115A74A1000D1D296 /* Grapher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0449A8B115A74A1000D1D296 /* GrapherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0449A8C715A74A1000D1D296 /* Build configuration list for PBXNativeTarget "GrapherTests" */;
+			buildPhases = (
+				0449A8AD15A74A1000D1D296 /* Sources */,
+				0449A8AE15A74A1000D1D296 /* Frameworks */,
+				0449A8AF15A74A1000D1D296 /* Resources */,
+				0449A8B015A74A1000D1D296 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0449A8B815A74A1000D1D296 /* PBXTargetDependency */,
+			);
+			name = GrapherTests;
+			productName = GrapherTests;
+			productReference = 0449A8B215A74A1000D1D296 /* GrapherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0449A88815A74A0F00D1D296 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 0449A88B15A74A0F00D1D296 /* Build configuration list for PBXProject "Grapher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0449A88615A74A0F00D1D296;
+			productRefGroup = 0449A89215A74A1000D1D296 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0449A89015A74A1000D1D296 /* Grapher */,
+				0449A8B115A74A1000D1D296 /* GrapherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0449A88F15A74A1000D1D296 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0449A8A015A74A1000D1D296 /* InfoPlist.strings in Resources */,
+				0449A8A915A74A1000D1D296 /* iPhone.storyboard in Resources */,
+				049ABADD15ABFB7E00C4F766 /* iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0449A8AF15A74A1000D1D296 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0449A8BE15A74A1000D1D296 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0449A8B015A74A1000D1D296 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0449A88D15A74A1000D1D296 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0449A8A215A74A1000D1D296 /* main.m in Sources */,
+				0449A8A615A74A1000D1D296 /* GrapherAppDelegate.m in Sources */,
+				0449A8AC15A74A1000D1D296 /* GrapherViewController.m in Sources */,
+				0449A8CC15A7756500D1D296 /* GrapherBrain.m in Sources */,
+				049ABB7915ACD90F00C4F766 /* GraphView.m in Sources */,
+				049ABB7C15ACDABE00C4F766 /* GraphViewController.m in Sources */,
+				049ABB8815AD44DF00C4F766 /* AxesDrawer.m in Sources */,
+				04B0698C15AF5BC20013D700 /* GrapherProgramsTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0449A8AD15A74A1000D1D296 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0449A8C115A74A1000D1D296 /* GrapherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0449A8B815A74A1000D1D296 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0449A89015A74A1000D1D296 /* Grapher */;
+			targetProxy = 0449A8B715A74A1000D1D296 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0449A89E15A74A1000D1D296 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0449A89F15A74A1000D1D296 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0449A8A715A74A1000D1D296 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0449A8A815A74A1000D1D296 /* en */,
+			);
+			name = iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		0449A8BC15A74A1000D1D296 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0449A8BD15A74A1000D1D296 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0449A8C215A74A1000D1D296 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0449A8C315A74A1000D1D296 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0449A8C515A74A1000D1D296 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grapher/Grapher-Prefix.pch";
+				INFOPLIST_FILE = "Grapher/Grapher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0449A8C615A74A1000D1D296 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grapher/Grapher-Prefix.pch";
+				INFOPLIST_FILE = "Grapher/Grapher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0449A8C815A74A1000D1D296 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Grapher.app/Grapher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grapher/Grapher-Prefix.pch";
+				INFOPLIST_FILE = "GrapherTests/GrapherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0449A8C915A74A1000D1D296 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Grapher.app/Grapher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grapher/Grapher-Prefix.pch";
+				INFOPLIST_FILE = "GrapherTests/GrapherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0449A88B15A74A0F00D1D296 /* Build configuration list for PBXProject "Grapher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0449A8C215A74A1000D1D296 /* Debug */,
+				0449A8C315A74A1000D1D296 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0449A8C415A74A1000D1D296 /* Build configuration list for PBXNativeTarget "Grapher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0449A8C515A74A1000D1D296 /* Debug */,
+				0449A8C615A74A1000D1D296 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0449A8C715A74A1000D1D296 /* Build configuration list for PBXNativeTarget "GrapherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0449A8C815A74A1000D1D296 /* Debug */,
+				0449A8C915A74A1000D1D296 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0449A88815A74A0F00D1D296 /* Project object */;
+}

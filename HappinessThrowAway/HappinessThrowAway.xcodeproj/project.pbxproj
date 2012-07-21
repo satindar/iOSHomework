@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		044E93BB15A38BE70072B5A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93BA15A38BE70072B5A0 /* UIKit.framework */; };
+		044E93BD15A38BE70072B5A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93BC15A38BE70072B5A0 /* Foundation.framework */; };
+		044E93BF15A38BE70072B5A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93BE15A38BE70072B5A0 /* CoreGraphics.framework */; };
+		044E93C515A38BE70072B5A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E93C315A38BE70072B5A0 /* InfoPlist.strings */; };
+		044E93C715A38BE70072B5A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E93C615A38BE70072B5A0 /* main.m */; };
+		044E93CB15A38BE70072B5A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E93CA15A38BE70072B5A0 /* AppDelegate.m */; };
+		044E93CE15A38BE70072B5A0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E93CC15A38BE70072B5A0 /* MainStoryboard.storyboard */; };
+		044E93D115A38BE70072B5A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E93D015A38BE70072B5A0 /* ViewController.m */; };
+		044E93D915A38BE70072B5A0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93D815A38BE70072B5A0 /* SenTestingKit.framework */; };
+		044E93DA15A38BE70072B5A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93BA15A38BE70072B5A0 /* UIKit.framework */; };
+		044E93DB15A38BE70072B5A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93BC15A38BE70072B5A0 /* Foundation.framework */; };
+		044E93E315A38BE70072B5A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E93E115A38BE70072B5A0 /* InfoPlist.strings */; };
+		044E93E615A38BE70072B5A0 /* HappinessThrowAwayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E93E515A38BE70072B5A0 /* HappinessThrowAwayTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		044E93DC15A38BE70072B5A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044E93AD15A38BE60072B5A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044E93B515A38BE70072B5A0;
+			remoteInfo = HappinessThrowAway;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		044E93B615A38BE70072B5A0 /* HappinessThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappinessThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		044E93BA15A38BE70072B5A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		044E93BC15A38BE70072B5A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		044E93BE15A38BE70072B5A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		044E93C215A38BE70072B5A0 /* HappinessThrowAway-Info.plist */ = {isa = PBXFileReference; path = "HappinessThrowAway-Info.plist"; sourceTree = "<group>"; };
+		044E93C415A38BE70072B5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		044E93C615A38BE70072B5A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		044E93C815A38BE70072B5A0 /* HappinessThrowAway-Prefix.pch */ = {isa = PBXFileReference; path = "HappinessThrowAway-Prefix.pch"; sourceTree = "<group>"; };
+		044E93C915A38BE70072B5A0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		044E93CA15A38BE70072B5A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		044E93CD15A38BE70072B5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		044E93CF15A38BE70072B5A0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		044E93D015A38BE70072B5A0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		044E93D715A38BE70072B5A0 /* HappinessThrowAwayTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappinessThrowAwayTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		044E93D815A38BE70072B5A0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		044E93E015A38BE70072B5A0 /* HappinessThrowAwayTests-Info.plist */ = {isa = PBXFileReference; path = "HappinessThrowAwayTests-Info.plist"; sourceTree = "<group>"; };
+		044E93E215A38BE70072B5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		044E93E415A38BE70072B5A0 /* HappinessThrowAwayTests.h */ = {isa = PBXFileReference; path = HappinessThrowAwayTests.h; sourceTree = "<group>"; };
+		044E93E515A38BE70072B5A0 /* HappinessThrowAwayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappinessThrowAwayTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		044E93B315A38BE70072B5A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044E93BB15A38BE70072B5A0 /* UIKit.framework in Frameworks */,
+				044E93BD15A38BE70072B5A0 /* Foundation.framework in Frameworks */,
+				044E93BF15A38BE70072B5A0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044E93D315A38BE70072B5A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044E93D915A38BE70072B5A0 /* SenTestingKit.framework in Frameworks */,
+				044E93DA15A38BE70072B5A0 /* UIKit.framework in Frameworks */,
+				044E93DB15A38BE70072B5A0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		044E93AB15A38BE60072B5A0 = {
+			isa = PBXGroup;
+			children = (
+				044E93C015A38BE70072B5A0 /* HappinessThrowAway */,
+				044E93DE15A38BE70072B5A0 /* HappinessThrowAwayTests */,
+				044E93B915A38BE70072B5A0 /* Frameworks */,
+				044E93B715A38BE70072B5A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		044E93B715A38BE70072B5A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				044E93B615A38BE70072B5A0 /* HappinessThrowAway.app */,
+				044E93D715A38BE70072B5A0 /* HappinessThrowAwayTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		044E93B915A38BE70072B5A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				044E93BA15A38BE70072B5A0 /* UIKit.framework */,
+				044E93BC15A38BE70072B5A0 /* Foundation.framework */,
+				044E93BE15A38BE70072B5A0 /* CoreGraphics.framework */,
+				044E93D815A38BE70072B5A0 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		044E93C015A38BE70072B5A0 /* HappinessThrowAway */ = {
+			isa = PBXGroup;
+			children = (
+				044E93C915A38BE70072B5A0 /* AppDelegate.h */,
+				044E93CA15A38BE70072B5A0 /* AppDelegate.m */,
+				044E93CC15A38BE70072B5A0 /* MainStoryboard.storyboard */,
+				044E93CF15A38BE70072B5A0 /* ViewController.h */,
+				044E93D015A38BE70072B5A0 /* ViewController.m */,
+				044E93C115A38BE70072B5A0 /* Supporting Files */,
+			);
+			path = HappinessThrowAway;
+			sourceTree = "<group>";
+		};
+		044E93C115A38BE70072B5A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				044E93C215A38BE70072B5A0 /* HappinessThrowAway-Info.plist */,
+				044E93C315A38BE70072B5A0 /* InfoPlist.strings */,
+				044E93C615A38BE70072B5A0 /* main.m */,
+				044E93C815A38BE70072B5A0 /* HappinessThrowAway-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		044E93DE15A38BE70072B5A0 /* HappinessThrowAwayTests */ = {
+			isa = PBXGroup;
+			children = (
+				044E93E415A38BE70072B5A0 /* HappinessThrowAwayTests.h */,
+				044E93E515A38BE70072B5A0 /* HappinessThrowAwayTests.m */,
+				044E93DF15A38BE70072B5A0 /* Supporting Files */,
+			);
+			path = HappinessThrowAwayTests;
+			sourceTree = "<group>";
+		};
+		044E93DF15A38BE70072B5A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				044E93E015A38BE70072B5A0 /* HappinessThrowAwayTests-Info.plist */,
+				044E93E115A38BE70072B5A0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		044E93B515A38BE70072B5A0 /* HappinessThrowAway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044E93E915A38BE70072B5A0 /* Build configuration list for PBXNativeTarget "HappinessThrowAway" */;
+			buildPhases = (
+				044E93B215A38BE70072B5A0 /* Sources */,
+				044E93B315A38BE70072B5A0 /* Frameworks */,
+				044E93B415A38BE70072B5A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappinessThrowAway;
+			productName = HappinessThrowAway;
+			productReference = 044E93B615A38BE70072B5A0 /* HappinessThrowAway.app */;
+			productType = "com.apple.product-type.application";
+		};
+		044E93D615A38BE70072B5A0 /* HappinessThrowAwayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044E93EC15A38BE70072B5A0 /* Build configuration list for PBXNativeTarget "HappinessThrowAwayTests" */;
+			buildPhases = (
+				044E93D215A38BE70072B5A0 /* Sources */,
+				044E93D315A38BE70072B5A0 /* Frameworks */,
+				044E93D415A38BE70072B5A0 /* Resources */,
+				044E93D515A38BE70072B5A0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044E93DD15A38BE70072B5A0 /* PBXTargetDependency */,
+			);
+			name = HappinessThrowAwayTests;
+			productName = HappinessThrowAwayTests;
+			productReference = 044E93D715A38BE70072B5A0 /* HappinessThrowAwayTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		044E93AD15A38BE60072B5A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 044E93B015A38BE60072B5A0 /* Build configuration list for PBXProject "HappinessThrowAway" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 044E93AB15A38BE60072B5A0;
+			productRefGroup = 044E93B715A38BE70072B5A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				044E93B515A38BE70072B5A0 /* HappinessThrowAway */,
+				044E93D615A38BE70072B5A0 /* HappinessThrowAwayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		044E93B415A38BE70072B5A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044E93C515A38BE70072B5A0 /* InfoPlist.strings in Resources */,
+				044E93CE15A38BE70072B5A0 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044E93D415A38BE70072B5A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044E93E315A38BE70072B5A0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		044E93D515A38BE70072B5A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		044E93B215A38BE70072B5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044E93C715A38BE70072B5A0 /* main.m in Sources */,
+				044E93CB15A38BE70072B5A0 /* AppDelegate.m in Sources */,
+				044E93D115A38BE70072B5A0 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044E93D215A38BE70072B5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044E93E615A38BE70072B5A0 /* HappinessThrowAwayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		044E93DD15A38BE70072B5A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044E93B515A38BE70072B5A0 /* HappinessThrowAway */;
+			targetProxy = 044E93DC15A38BE70072B5A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		044E93C315A38BE70072B5A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044E93C415A38BE70072B5A0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		044E93CC15A38BE70072B5A0 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044E93CD15A38BE70072B5A0 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		044E93E115A38BE70072B5A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044E93E215A38BE70072B5A0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		044E93E715A38BE70072B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		044E93E815A38BE70072B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		044E93EA15A38BE70072B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappinessThrowAway/HappinessThrowAway-Prefix.pch";
+				INFOPLIST_FILE = "HappinessThrowAway/HappinessThrowAway-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		044E93EB15A38BE70072B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappinessThrowAway/HappinessThrowAway-Prefix.pch";
+				INFOPLIST_FILE = "HappinessThrowAway/HappinessThrowAway-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		044E93ED15A38BE70072B5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HappinessThrowAway.app/HappinessThrowAway";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappinessThrowAway/HappinessThrowAway-Prefix.pch";
+				INFOPLIST_FILE = "HappinessThrowAwayTests/HappinessThrowAwayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		044E93EE15A38BE70072B5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HappinessThrowAway.app/HappinessThrowAway";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappinessThrowAway/HappinessThrowAway-Prefix.pch";
+				INFOPLIST_FILE = "HappinessThrowAwayTests/HappinessThrowAwayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		044E93B015A38BE60072B5A0 /* Build configuration list for PBXProject "HappinessThrowAway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044E93E715A38BE70072B5A0 /* Debug */,
+				044E93E815A38BE70072B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044E93E915A38BE70072B5A0 /* Build configuration list for PBXNativeTarget "HappinessThrowAway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044E93EA15A38BE70072B5A0 /* Debug */,
+				044E93EB15A38BE70072B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		044E93EC15A38BE70072B5A0 /* Build configuration list for PBXNativeTarget "HappinessThrowAwayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044E93ED15A38BE70072B5A0 /* Debug */,
+				044E93EE15A38BE70072B5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 044E93AD15A38BE60072B5A0 /* Project object */;
+}

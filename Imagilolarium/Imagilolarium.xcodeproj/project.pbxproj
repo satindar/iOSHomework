@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0478299E14F59F6100F89F28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478299D14F59F6100F89F28 /* UIKit.framework */; };
+		047829A014F59F6100F89F28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478299F14F59F6100F89F28 /* Foundation.framework */; };
+		047829A214F59F6100F89F28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829A114F59F6100F89F28 /* CoreGraphics.framework */; };
+		047829A814F59F6100F89F28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 047829A614F59F6100F89F28 /* InfoPlist.strings */; };
+		047829AA14F59F6100F89F28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047829A914F59F6100F89F28 /* main.m */; };
+		047829AE14F59F6100F89F28 /* ImagilolariumAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047829AD14F59F6100F89F28 /* ImagilolariumAppDelegate.m */; };
+		047829B114F59F6100F89F28 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047829AF14F59F6100F89F28 /* MainStoryboard_iPhone.storyboard */; };
+		047829B414F59F6100F89F28 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047829B214F59F6100F89F28 /* MainStoryboard_iPad.storyboard */; };
+		047829B714F59F6100F89F28 /* ImagilolariumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047829B614F59F6100F89F28 /* ImagilolariumViewController.m */; };
+		047829BF14F59F6100F89F28 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829BE14F59F6100F89F28 /* SenTestingKit.framework */; };
+		047829C014F59F6100F89F28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478299D14F59F6100F89F28 /* UIKit.framework */; };
+		047829C114F59F6100F89F28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478299F14F59F6100F89F28 /* Foundation.framework */; };
+		047829C914F59F6100F89F28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 047829C714F59F6100F89F28 /* InfoPlist.strings */; };
+		047829CC14F59F6100F89F28 /* ImagilolariumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 047829CB14F59F6100F89F28 /* ImagilolariumTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		047829C214F59F6100F89F28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0478299014F59F6100F89F28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0478299814F59F6100F89F28;
+			remoteInfo = Imagilolarium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0478299914F59F6100F89F28 /* Imagilolarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagilolarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0478299D14F59F6100F89F28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0478299F14F59F6100F89F28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		047829A114F59F6100F89F28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		047829A514F59F6100F89F28 /* Imagilolarium-Info.plist */ = {isa = PBXFileReference; path = "Imagilolarium-Info.plist"; sourceTree = "<group>"; };
+		047829A714F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		047829A914F59F6100F89F28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		047829AB14F59F6100F89F28 /* Imagilolarium-Prefix.pch */ = {isa = PBXFileReference; path = "Imagilolarium-Prefix.pch"; sourceTree = "<group>"; };
+		047829AC14F59F6100F89F28 /* ImagilolariumAppDelegate.h */ = {isa = PBXFileReference; path = ImagilolariumAppDelegate.h; sourceTree = "<group>"; };
+		047829AD14F59F6100F89F28 /* ImagilolariumAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagilolariumAppDelegate.m; sourceTree = "<group>"; };
+		047829B014F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		047829B314F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		047829B514F59F6100F89F28 /* ImagilolariumViewController.h */ = {isa = PBXFileReference; path = ImagilolariumViewController.h; sourceTree = "<group>"; };
+		047829B614F59F6100F89F28 /* ImagilolariumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagilolariumViewController.m; sourceTree = "<group>"; };
+		047829BD14F59F6100F89F28 /* ImagilolariumTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagilolariumTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		047829BE14F59F6100F89F28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		047829C614F59F6100F89F28 /* ImagilolariumTests-Info.plist */ = {isa = PBXFileReference; path = "ImagilolariumTests-Info.plist"; sourceTree = "<group>"; };
+		047829C814F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		047829CA14F59F6100F89F28 /* ImagilolariumTests.h */ = {isa = PBXFileReference; path = ImagilolariumTests.h; sourceTree = "<group>"; };
+		047829CB14F59F6100F89F28 /* ImagilolariumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagilolariumTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0478299614F59F6100F89F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0478299E14F59F6100F89F28 /* UIKit.framework in Frameworks */,
+				047829A014F59F6100F89F28 /* Foundation.framework in Frameworks */,
+				047829A214F59F6100F89F28 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047829B914F59F6100F89F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047829BF14F59F6100F89F28 /* SenTestingKit.framework in Frameworks */,
+				047829C014F59F6100F89F28 /* UIKit.framework in Frameworks */,
+				047829C114F59F6100F89F28 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0478298E14F59F6100F89F28 = {
+			isa = PBXGroup;
+			children = (
+				047829A314F59F6100F89F28 /* Imagilolarium */,
+				047829C414F59F6100F89F28 /* ImagilolariumTests */,
+				0478299C14F59F6100F89F28 /* Frameworks */,
+				0478299A14F59F6100F89F28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0478299A14F59F6100F89F28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0478299914F59F6100F89F28 /* Imagilolarium.app */,
+				047829BD14F59F6100F89F28 /* ImagilolariumTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0478299C14F59F6100F89F28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0478299D14F59F6100F89F28 /* UIKit.framework */,
+				0478299F14F59F6100F89F28 /* Foundation.framework */,
+				047829A114F59F6100F89F28 /* CoreGraphics.framework */,
+				047829BE14F59F6100F89F28 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		047829A314F59F6100F89F28 /* Imagilolarium */ = {
+			isa = PBXGroup;
+			children = (
+				047829AC14F59F6100F89F28 /* ImagilolariumAppDelegate.h */,
+				047829AD14F59F6100F89F28 /* ImagilolariumAppDelegate.m */,
+				047829AF14F59F6100F89F28 /* MainStoryboard_iPhone.storyboard */,
+				047829B214F59F6100F89F28 /* MainStoryboard_iPad.storyboard */,
+				047829B514F59F6100F89F28 /* ImagilolariumViewController.h */,
+				047829B614F59F6100F89F28 /* ImagilolariumViewController.m */,
+				047829A414F59F6100F89F28 /* Supporting Files */,
+			);
+			path = Imagilolarium;
+			sourceTree = "<group>";
+		};
+		047829A414F59F6100F89F28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				047829A514F59F6100F89F28 /* Imagilolarium-Info.plist */,
+				047829A614F59F6100F89F28 /* InfoPlist.strings */,
+				047829A914F59F6100F89F28 /* main.m */,
+				047829AB14F59F6100F89F28 /* Imagilolarium-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		047829C414F59F6100F89F28 /* ImagilolariumTests */ = {
+			isa = PBXGroup;
+			children = (
+				047829CA14F59F6100F89F28 /* ImagilolariumTests.h */,
+				047829CB14F59F6100F89F28 /* ImagilolariumTests.m */,
+				047829C514F59F6100F89F28 /* Supporting Files */,
+			);
+			path = ImagilolariumTests;
+			sourceTree = "<group>";
+		};
+		047829C514F59F6100F89F28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				047829C614F59F6100F89F28 /* ImagilolariumTests-Info.plist */,
+				047829C714F59F6100F89F28 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0478299814F59F6100F89F28 /* Imagilolarium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047829CF14F59F6100F89F28 /* Build configuration list for PBXNativeTarget "Imagilolarium" */;
+			buildPhases = (
+				0478299514F59F6100F89F28 /* Sources */,
+				0478299614F59F6100F89F28 /* Frameworks */,
+				0478299714F59F6100F89F28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Imagilolarium;
+			productName = Imagilolarium;
+			productReference = 0478299914F59F6100F89F28 /* Imagilolarium.app */;
+			productType = "com.apple.product-type.application";
+		};
+		047829BC14F59F6100F89F28 /* ImagilolariumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047829D214F59F6100F89F28 /* Build configuration list for PBXNativeTarget "ImagilolariumTests" */;
+			buildPhases = (
+				047829B814F59F6100F89F28 /* Sources */,
+				047829B914F59F6100F89F28 /* Frameworks */,
+				047829BA14F59F6100F89F28 /* Resources */,
+				047829BB14F59F6100F89F28 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047829C314F59F6100F89F28 /* PBXTargetDependency */,
+			);
+			name = ImagilolariumTests;
+			productName = ImagilolariumTests;
+			productReference = 047829BD14F59F6100F89F28 /* ImagilolariumTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0478299014F59F6100F89F28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 0478299314F59F6100F89F28 /* Build configuration list for PBXProject "Imagilolarium" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0478298E14F59F6100F89F28;
+			productRefGroup = 0478299A14F59F6100F89F28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0478299814F59F6100F89F28 /* Imagilolarium */,
+				047829BC14F59F6100F89F28 /* ImagilolariumTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0478299714F59F6100F89F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047829A814F59F6100F89F28 /* InfoPlist.strings in Resources */,
+				047829B114F59F6100F89F28 /* MainStoryboard_iPhone.storyboard in Resources */,
+				047829B414F59F6100F89F28 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047829BA14F59F6100F89F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047829C914F59F6100F89F28 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		047829BB14F59F6100F89F28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0478299514F59F6100F89F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047829AA14F59F6100F89F28 /* main.m in Sources */,
+				047829AE14F59F6100F89F28 /* ImagilolariumAppDelegate.m in Sources */,
+				047829B714F59F6100F89F28 /* ImagilolariumViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047829B814F59F6100F89F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047829CC14F59F6100F89F28 /* ImagilolariumTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		047829C314F59F6100F89F28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0478299814F59F6100F89F28 /* Imagilolarium */;
+			targetProxy = 047829C214F59F6100F89F28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		047829A614F59F6100F89F28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				047829A714F59F6100F89F28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		047829AF14F59F6100F89F28 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				047829B014F59F6100F89F28 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		047829B214F59F6100F89F28 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				047829B314F59F6100F89F28 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		047829C714F59F6100F89F28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				047829C814F59F6100F89F28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		047829CD14F59F6100F89F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		047829CE14F59F6100F89F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		047829D014F59F6100F89F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Imagilolarium/Imagilolarium-Prefix.pch";
+				INFOPLIST_FILE = "Imagilolarium/Imagilolarium-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		047829D114F59F6100F89F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Imagilolarium/Imagilolarium-Prefix.pch";
+				INFOPLIST_FILE = "Imagilolarium/Imagilolarium-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		047829D314F59F6100F89F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Imagilolarium.app/Imagilolarium";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Imagilolarium/Imagilolarium-Prefix.pch";
+				INFOPLIST_FILE = "ImagilolariumTests/ImagilolariumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		047829D414F59F6100F89F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Imagilolarium.app/Imagilolarium";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Imagilolarium/Imagilolarium-Prefix.pch";
+				INFOPLIST_FILE = "ImagilolariumTests/ImagilolariumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0478299314F59F6100F89F28 /* Build configuration list for PBXProject "Imagilolarium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047829CD14F59F6100F89F28 /* Debug */,
+				047829CE14F59F6100F89F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047829CF14F59F6100F89F28 /* Build configuration list for PBXNativeTarget "Imagilolarium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047829D014F59F6100F89F28 /* Debug */,
+				047829D114F59F6100F89F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		047829D214F59F6100F89F28 /* Build configuration list for PBXNativeTarget "ImagilolariumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047829D314F59F6100F89F28 /* Debug */,
+				047829D414F59F6100F89F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0478299014F59F6100F89F28 /* Project object */;
+}
