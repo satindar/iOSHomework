@@ -10,4 +10,6 @@
 
 @interface ScrollViewController : UIViewController
 
+@property (nonatomic, strong) NSDictionary *photo;
+
 @end

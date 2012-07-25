@@ -10,4 +10,6 @@
 
 @interface TopPlacesTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *topPlaces; // array of Flickr photo dictionaries
+
 @end

@@ -10,4 +10,6 @@
 
 @interface RecentlyViewedPhotosTableViewController : RecentPhotosFromTopPlacesTableViewController
 
+@property (nonatomic, strong) NSArray *photos;
+
 @end

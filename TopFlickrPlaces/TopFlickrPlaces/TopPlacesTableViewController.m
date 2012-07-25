@@ -7,12 +7,45 @@
 //
 
 #import "TopPlacesTableViewController.h"
+#import "FlickrFetcher.h"
+#import "RecentPhotosFromTopPlacesTableViewController.h"
 
 @interface TopPlacesTableViewController ()
 
 @end
 
 @implementation TopPlacesTableViewController
+
+@synthesize topPlaces = _topPlaces;
+
+- (IBAction)refresh:(id)sender 
+{
+    // might want to use introspection to be sure sender is UIBarButtonItem
+    // (if not, it can skip the spinner)
+    // that way this method can be a little more generic
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    
+    dispatch_queue_t dowloadQueue = dispatch_queue_create("flickr downloader", NULL);
+    dispatch_async(dowloadQueue, ^{
+        NSArray *unorderedPlaces = [FlickrFetcher topPlaces];
+        NSArray *places = [unorderedPlaces sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:FLICKR_PLACE_NAME ascending:YES]]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.navigationItem.rightBarButtonItem = sender;
+            self.topPlaces = places;
+        });
+    });
+    dispatch_release(dowloadQueue);
+}
+
+- (void)setTopPlaces:(NSArray *)topPlaces
+{
+    if (_topPlaces != topPlaces) {
+        _topPlaces = topPlaces;
+    }
+    [self.tableView reloadData];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +59,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self refresh:self.navigationItem.rightBarButtonItem];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,80 +82,63 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.topPlaces count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Top Place";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     // Configure the cell...
     
+    NSDictionary *topPlace = [self.topPlaces objectAtIndex:indexPath.row];
+    NSMutableArray *placeDescription = [[[topPlace objectForKey:FLICKR_PLACE_NAME] componentsSeparatedByString:@","] mutableCopy];
+    cell.textLabel.text = [placeDescription objectAtIndex:0];
+    [placeDescription removeObjectAtIndex:0];
+    NSString *detailDescription;
+    for (NSString *element in placeDescription) {
+        if (!detailDescription) {
+            detailDescription = element;
+        } else {
+            detailDescription = [detailDescription stringByAppendingString:[@"," stringByAppendingString:element]];
+        }
+    }
+    if (detailDescription) {
+        cell.detailTextLabel.text = detailDescription;
+    }
+//    NSLog(@"%@", detailDescription);
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
+    
+    dispatch_queue_t requestQueue = dispatch_queue_create("flickr requester", NULL);
+    dispatch_async(requestQueue, ^{
+        NSArray *photosForPlace = [FlickrFetcher photosInPlace:[self.topPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row] maxResults:50];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [segue.destinationViewController setRecentPhotosFromTopPlaces:photosForPlace];
+        });
+    });
+    dispatch_release(requestQueue);
 }
+
+
 
 @end
