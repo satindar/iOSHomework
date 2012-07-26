@@ -44,9 +44,8 @@
     self.scrollView.delegate = self;
 	// Do any additional setup after loading the view.
 }
+
                       
-
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -85,7 +84,11 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
 }
 
 @end

@@ -55,9 +55,21 @@
     return cell;
 }
 
+- (ScrollViewController *)splitViewScrollViewController
+{
+    id svc = [self.splitViewController.viewControllers lastObject];
+    if (![svc isKindOfClass:[ScrollViewController class]]) {
+        svc = nil;
+    }
+    return svc;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if ([self splitViewScrollViewController]) {
+        NSDictionary *photo = [self.recentPhotosFromTopPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        [[self splitViewScrollViewController] setPhoto:photo];
+    }
 }
 
 
