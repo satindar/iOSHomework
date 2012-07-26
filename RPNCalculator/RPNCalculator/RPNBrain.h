@@ -16,7 +16,7 @@
 - (void)clearProgramStack;
 - (void)clearLastOperand;
 
-@property (readonly) id program; 
+@property (readonly) id program; // will always return a property list
 
 + (double)runProgram:(id)program;
 + (double)runProgram:(id)program usingVariableValues:(NSDictionary *)variableValues;

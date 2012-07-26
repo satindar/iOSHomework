@@ -8,6 +8,8 @@
 
 #import "RPNViewController.h"
 #import "RPNBrain.h"
+#import "RPNGraphViewController.h"
+#import "SplitViewBarButtonItemPresenter.h"
 
 @interface RPNViewController()
 
@@ -22,10 +24,19 @@
 
 @synthesize display = _display;
 @synthesize inputDisplay = _inputDisplay;
-@synthesize variablesUsedDisplay = _variablesUsedDisplay;
 @synthesize userIsInTheMiddleOfEnteringANumber = _userIsInTheMiddleOfEnteringANumber;
 @synthesize brain = _brain;
 @synthesize variableTestValues = _variableTestValues;
+
+- (RPNGraphViewController *)splitViewGraphViewController
+{
+    id gvc = [self.splitViewController.viewControllers lastObject];
+    if (![gvc isKindOfClass:[RPNGraphViewController class]]) {
+        gvc = nil;
+    }
+    return gvc;
+}
+
 
 - (RPNBrain *)brain
 {
@@ -41,26 +52,12 @@
 
 - (void)updateDisplays
 {
-    self.variablesUsedDisplay.text = @"";
     self.inputDisplay.text = [RPNBrain descriptionOfProgram:self.brain.program];
-    NSSet *variablesUsed = [RPNBrain variablesUsedInProgram:self.brain.program];
-    for (id obj in variablesUsed) {
-        self.variablesUsedDisplay.text = [self.variablesUsedDisplay.text stringByAppendingString:[NSString stringWithFormat:@"%@ = %@   ", obj, [self.variableTestValues objectForKey:obj]]];
-    }
+    if ([self splitViewGraphViewController]) {
+        [self.splitViewGraphViewController setProgram:self.brain.program];
+    } 
 }
 
-- (IBAction)testVariableButtonPressed:(UIButton *)sender 
-{
-    if ([[sender currentTitle] isEqualToString:@"Test 1"]) {
-        self.variableTestValues = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:0], @"x", [NSNumber numberWithDouble:0], @"a", [NSNumber numberWithDouble:0], @"b", nil];
-    } else if ([[sender currentTitle] isEqualToString:@"Test 2"]) {
-        self.variableTestValues = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:1.2], @"x",[NSNumber numberWithDouble:-10], @"a", [NSNumber numberWithDouble:-1], @"b", nil];
-    } else if ([[sender currentTitle] isEqualToString:@"Test 3"]) {
-        self.variableTestValues = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:2], @"x", [NSNumber numberWithDouble:5], @"a", [NSNumber numberWithDouble:10], @"b", nil];
-    }
-    [self updateDisplays];
-    // NSLog(@"dictionary values %@", self.variableTestValues);
-}
 
 - (IBAction)digitPressed:(UIButton *)sender 
 {
@@ -91,7 +88,7 @@
 
 - (IBAction)enterPressed 
 {
-    if (!([self.display.text isEqualToString:@"x"] || [self.display.text isEqualToString:@"a"] || [self.display.text isEqualToString:@"b"])) {
+    if (!([self.display.text isEqualToString:@"x"])) {
         [self.brain pushOperand:[self.display.text doubleValue]];
     }
     [self updateDisplays];
@@ -117,7 +114,7 @@
         [self enterPressed];
     }
     NSString *operation = [sender currentTitle];
-    double result = [self.brain performOperation:operation usingVariableValues:self.variableTestValues];
+    double result = [self.brain performOperation:operation usingVariableValues:nil];
     [self updateDisplays];
     self.display.text = [NSString stringWithFormat:@"%g", result];
 }
@@ -128,7 +125,6 @@
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.display.text = @"0";
     self.inputDisplay.text = @"";
-    self.variablesUsedDisplay.text = @"";
 }
 
 - (IBAction)undoPressed:(id)sender // needs work
@@ -153,11 +149,70 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender   
+{
+    if ([segue.identifier isEqualToString:@"Show Graph"]) {
+        [segue.destinationViewController setProgram:self.brain.program];
+    } 
+}
+
+- (void)viewDidLoad 
+{
+    [super viewDidLoad];
+    self.splitViewController.delegate = self; 
+}
+
 
 - (void)viewDidUnload {
     [self setInputDisplay:nil];
-    [self setVariablesUsedDisplay:nil];
     [super viewDidUnload];
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.splitViewController.delegate = self; 
+    if ([self splitViewGraphViewController]) {
+        [self.splitViewGraphViewController setProgram:self.brain.program];
+    }
+}
+
+- (id <SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter
+{
+    id detailVC = [self.splitViewController.viewControllers lastObject];
+    if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) {
+        detailVC = nil;
+    }
+    return detailVC;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc 
+   shouldHideViewController:(UIViewController *)vc 
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return self.splitViewBarButtonItemPresenter ? UIInterfaceOrientationIsPortrait(orientation) : NO;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc 
+     willHideViewController:(UIViewController *)aViewController 
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem 
+       forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = @"Calculator";
+    // tell the detail view to put the button up
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc 
+     willShowViewController:(UIViewController *)aViewController 
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
 }
 
 @end

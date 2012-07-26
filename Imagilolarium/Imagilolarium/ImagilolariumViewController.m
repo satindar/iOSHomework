@@ -8,47 +8,26 @@
 
 #import "ImagilolariumViewController.h"
 
+@interface ImagilolariumViewController() <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@end
+
 @implementation ImagilolariumViewController
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
+@synthesize imageView;
+@synthesize scrollView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.scrollView.delegate = self;
+    self.scrollView.contentSize = self.imageView.image.size;
+    self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
 }
 
-- (void)viewDidUnload
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
+    return self.imageView;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -61,4 +40,9 @@
     }
 }
 
+- (void)viewDidUnload {
+    [self setImageView:nil];
+    [self setScrollView:nil];
+    [super viewDidUnload];
+}
 @end

@@ -15,12 +15,17 @@
 		04782A0114F8339400F89F28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A0014F8339400F89F28 /* AppDelegate.m */; };
 		04782A0414F8339400F89F28 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04782A0214F8339400F89F28 /* MainStoryboard_iPhone.storyboard */; };
 		04782A0714F8339400F89F28 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04782A0514F8339400F89F28 /* MainStoryboard_iPad.storyboard */; };
-		04782A0A14F8339400F89F28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A0914F8339400F89F28 /* ViewController.m */; };
 		04782A1214F8339400F89F28 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04782A1114F8339400F89F28 /* SenTestingKit.framework */; };
 		04782A1314F8339400F89F28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829F014F8339400F89F28 /* UIKit.framework */; };
 		04782A1414F8339400F89F28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829F214F8339400F89F28 /* Foundation.framework */; };
 		04782A1C14F8339400F89F28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04782A1A14F8339400F89F28 /* InfoPlist.strings */; };
 		04782A1F14F8339400F89F28 /* ShutterblugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A1E14F8339400F89F28 /* ShutterblugTests.m */; };
+		04782A2A14F8346A00F89F28 /* FlickrPhotoTable ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A2914F8346A00F89F28 /* FlickrPhotoTable ViewController.m */; };
+		04782A2E14F8365F00F89F28 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A2D14F8365F00F89F28 /* FlickrFetcher.m */; };
+		04782A3114FC081300F89F28 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A3014FC081300F89F28 /* MapViewController.m */; };
+		04782A3314FC08B100F89F28 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04782A3214FC08B100F89F28 /* MapKit.framework */; };
+		04782A3514FC08CE00F89F28 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04782A3414FC08CE00F89F28 /* CoreLocation.framework */; };
+		04782A3814FC0E3A00F89F28 /* FlickrPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04782A3714FC0E3A00F89F28 /* FlickrPhotoAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +43,31 @@
 		047829F014F8339400F89F28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		047829F214F8339400F89F28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		047829F414F8339400F89F28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		047829F814F8339400F89F28 /* Shutterblug-Info.plist */ = {isa = PBXFileReference; path = "Shutterblug-Info.plist"; sourceTree = "<group>"; };
+		047829F814F8339400F89F28 /* Shutterblug-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Shutterblug-Info.plist"; sourceTree = "<group>"; };
 		047829FA14F8339400F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		047829FC14F8339400F89F28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		047829FE14F8339400F89F28 /* Shutterblug-Prefix.pch */ = {isa = PBXFileReference; path = "Shutterblug-Prefix.pch"; sourceTree = "<group>"; };
-		047829FF14F8339400F89F28 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		047829FE14F8339400F89F28 /* Shutterblug-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shutterblug-Prefix.pch"; sourceTree = "<group>"; };
+		047829FF14F8339400F89F28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04782A0014F8339400F89F28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04782A0314F8339400F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		04782A0614F8339400F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		04782A0814F8339400F89F28 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		04782A0914F8339400F89F28 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04782A1014F8339400F89F28 /* ShutterblugTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShutterblugTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04782A1114F8339400F89F28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		04782A1914F8339400F89F28 /* ShutterblugTests-Info.plist */ = {isa = PBXFileReference; path = "ShutterblugTests-Info.plist"; sourceTree = "<group>"; };
+		04782A1914F8339400F89F28 /* ShutterblugTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShutterblugTests-Info.plist"; sourceTree = "<group>"; };
 		04782A1B14F8339400F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		04782A1D14F8339400F89F28 /* ShutterblugTests.h */ = {isa = PBXFileReference; path = ShutterblugTests.h; sourceTree = "<group>"; };
+		04782A1D14F8339400F89F28 /* ShutterblugTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShutterblugTests.h; sourceTree = "<group>"; };
 		04782A1E14F8339400F89F28 /* ShutterblugTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShutterblugTests.m; sourceTree = "<group>"; };
+		04782A2814F8346A00F89F28 /* FlickrPhotoTable ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlickrPhotoTable ViewController.h"; sourceTree = "<group>"; };
+		04782A2914F8346A00F89F28 /* FlickrPhotoTable ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FlickrPhotoTable ViewController.m"; sourceTree = "<group>"; };
+		04782A2B14F8365F00F89F28 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		04782A2C14F8365F00F89F28 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		04782A2D14F8365F00F89F28 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		04782A2F14FC081300F89F28 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		04782A3014FC081300F89F28 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		04782A3214FC08B100F89F28 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		04782A3414FC08CE00F89F28 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		04782A3614FC0E3A00F89F28 /* FlickrPhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoAnnotation.h; sourceTree = "<group>"; };
+		04782A3714FC0E3A00F89F28 /* FlickrPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04782A3514FC08CE00F89F28 /* CoreLocation.framework in Frameworks */,
+				04782A3314FC08B100F89F28 /* MapKit.framework in Frameworks */,
 				047829F114F8339400F89F28 /* UIKit.framework in Frameworks */,
 				047829F314F8339400F89F28 /* Foundation.framework in Frameworks */,
 				047829F514F8339400F89F28 /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +118,8 @@
 		047829EF14F8339400F89F28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04782A3414FC08CE00F89F28 /* CoreLocation.framework */,
+				04782A3214FC08B100F89F28 /* MapKit.framework */,
 				047829F014F8339400F89F28 /* UIKit.framework */,
 				047829F214F8339400F89F28 /* Foundation.framework */,
 				047829F414F8339400F89F28 /* CoreGraphics.framework */,
@@ -113,12 +131,17 @@
 		047829F614F8339400F89F28 /* Shutterblug */ = {
 			isa = PBXGroup;
 			children = (
-				047829FF14F8339400F89F28 /* AppDelegate.h */,
-				04782A0014F8339400F89F28 /* AppDelegate.m */,
 				04782A0214F8339400F89F28 /* MainStoryboard_iPhone.storyboard */,
 				04782A0514F8339400F89F28 /* MainStoryboard_iPad.storyboard */,
-				04782A0814F8339400F89F28 /* ViewController.h */,
-				04782A0914F8339400F89F28 /* ViewController.m */,
+				04782A2F14FC081300F89F28 /* MapViewController.h */,
+				04782A3014FC081300F89F28 /* MapViewController.m */,
+				04782A2814F8346A00F89F28 /* FlickrPhotoTable ViewController.h */,
+				04782A2914F8346A00F89F28 /* FlickrPhotoTable ViewController.m */,
+				04782A3614FC0E3A00F89F28 /* FlickrPhotoAnnotation.h */,
+				04782A3714FC0E3A00F89F28 /* FlickrPhotoAnnotation.m */,
+				04782A2B14F8365F00F89F28 /* FlickrAPIKey.h */,
+				04782A2C14F8365F00F89F28 /* FlickrFetcher.h */,
+				04782A2D14F8365F00F89F28 /* FlickrFetcher.m */,
 				047829F714F8339400F89F28 /* Supporting Files */,
 			);
 			path = Shutterblug;
@@ -127,6 +150,8 @@
 		047829F714F8339400F89F28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				047829FF14F8339400F89F28 /* AppDelegate.h */,
+				04782A0014F8339400F89F28 /* AppDelegate.m */,
 				047829F814F8339400F89F28 /* Shutterblug-Info.plist */,
 				047829F914F8339400F89F28 /* InfoPlist.strings */,
 				047829FC14F8339400F89F28 /* main.m */,
@@ -263,7 +288,10 @@
 			files = (
 				047829FD14F8339400F89F28 /* main.m in Sources */,
 				04782A0114F8339400F89F28 /* AppDelegate.m in Sources */,
-				04782A0A14F8339400F89F28 /* ViewController.m in Sources */,
+				04782A2A14F8346A00F89F28 /* FlickrPhotoTable ViewController.m in Sources */,
+				04782A2E14F8365F00F89F28 /* FlickrFetcher.m in Sources */,
+				04782A3114FC081300F89F28 /* MapViewController.m in Sources */,
+				04782A3814FC0E3A00F89F28 /* FlickrPhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

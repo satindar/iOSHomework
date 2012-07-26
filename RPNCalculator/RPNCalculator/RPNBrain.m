@@ -82,14 +82,14 @@
 
 + (NSString *)removeExtraneousParenthesesAndCommas:(NSString *)description
 {
-    NSString *concantenatedString = description;
-    if ([concantenatedString hasPrefix:@"("] && [concantenatedString hasSuffix:@")"]) {
-        concantenatedString = [concantenatedString substringToIndex:([concantenatedString length] - 1)];
-        concantenatedString = [concantenatedString substringFromIndex:1];
+    NSString *processedString = description;
+    if ([processedString hasPrefix:@"("] && [processedString hasSuffix:@")"]) {
+        processedString = [processedString substringToIndex:([processedString length] - 1)];
+        processedString = [processedString substringFromIndex:1];
     }
     // write implementation to remove redundant inner parentheses
     // write implementation to remove extra commas 
-    return concantenatedString;
+    return processedString;
 }
 
 + (NSString *)descriptionOfTopOfStack:(NSMutableArray *)stack 
@@ -147,7 +147,7 @@
         if ([operation isEqualToString:@"+"]) {
             result = [self popOperandOffStack:stack] + [self popOperandOffStack:stack];
         } else if ([@"*" isEqualToString:operation]) {
-            result = [self popOperandOffStack:stack] + [self popOperandOffStack:stack];
+            result = [self popOperandOffStack:stack] * [self popOperandOffStack:stack];
         } else if ([@"-" isEqualToString:operation]) {
             double subtrahend = [self popOperandOffStack:stack];
             result = [self popOperandOffStack:stack] - subtrahend;

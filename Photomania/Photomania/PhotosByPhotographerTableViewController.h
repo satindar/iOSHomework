@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photographer.h"
+#import "CoreDataTableViewController.h"
 
-@interface PhotosByPhotographerTableViewController : UITableViewController
+@interface PhotosByPhotographerTableViewController : CoreDataTableViewController
+
+@property (nonatomic, strong) Photographer *photographer;
 
 @end

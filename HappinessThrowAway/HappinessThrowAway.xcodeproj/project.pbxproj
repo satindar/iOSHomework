@@ -20,6 +20,7 @@
 		044E93DB15A38BE70072B5A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E93BC15A38BE70072B5A0 /* Foundation.framework */; };
 		044E93E315A38BE70072B5A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E93E115A38BE70072B5A0 /* InfoPlist.strings */; };
 		044E93E615A38BE70072B5A0 /* HappinessThrowAwayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E93E515A38BE70072B5A0 /* HappinessThrowAwayTests.m */; };
+		044E93F115A38CDF0072B5A0 /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E93F015A38CDF0072B5A0 /* FaceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +38,23 @@
 		044E93BA15A38BE70072B5A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		044E93BC15A38BE70072B5A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		044E93BE15A38BE70072B5A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		044E93C215A38BE70072B5A0 /* HappinessThrowAway-Info.plist */ = {isa = PBXFileReference; path = "HappinessThrowAway-Info.plist"; sourceTree = "<group>"; };
+		044E93C215A38BE70072B5A0 /* HappinessThrowAway-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappinessThrowAway-Info.plist"; sourceTree = "<group>"; };
 		044E93C415A38BE70072B5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		044E93C615A38BE70072B5A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		044E93C815A38BE70072B5A0 /* HappinessThrowAway-Prefix.pch */ = {isa = PBXFileReference; path = "HappinessThrowAway-Prefix.pch"; sourceTree = "<group>"; };
-		044E93C915A38BE70072B5A0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		044E93C815A38BE70072B5A0 /* HappinessThrowAway-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HappinessThrowAway-Prefix.pch"; sourceTree = "<group>"; };
+		044E93C915A38BE70072B5A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		044E93CA15A38BE70072B5A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		044E93CD15A38BE70072B5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		044E93CF15A38BE70072B5A0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		044E93CF15A38BE70072B5A0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		044E93D015A38BE70072B5A0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		044E93D715A38BE70072B5A0 /* HappinessThrowAwayTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappinessThrowAwayTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		044E93D815A38BE70072B5A0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		044E93E015A38BE70072B5A0 /* HappinessThrowAwayTests-Info.plist */ = {isa = PBXFileReference; path = "HappinessThrowAwayTests-Info.plist"; sourceTree = "<group>"; };
+		044E93E015A38BE70072B5A0 /* HappinessThrowAwayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappinessThrowAwayTests-Info.plist"; sourceTree = "<group>"; };
 		044E93E215A38BE70072B5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		044E93E415A38BE70072B5A0 /* HappinessThrowAwayTests.h */ = {isa = PBXFileReference; path = HappinessThrowAwayTests.h; sourceTree = "<group>"; };
+		044E93E415A38BE70072B5A0 /* HappinessThrowAwayTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HappinessThrowAwayTests.h; sourceTree = "<group>"; };
 		044E93E515A38BE70072B5A0 /* HappinessThrowAwayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappinessThrowAwayTests.m; sourceTree = "<group>"; };
+		044E93EF15A38CDF0072B5A0 /* FaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceView.h; sourceTree = "<group>"; };
+		044E93F015A38CDF0072B5A0 /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				044E93CC15A38BE70072B5A0 /* MainStoryboard.storyboard */,
 				044E93CF15A38BE70072B5A0 /* ViewController.h */,
 				044E93D015A38BE70072B5A0 /* ViewController.m */,
+				044E93EF15A38CDF0072B5A0 /* FaceView.h */,
+				044E93F015A38CDF0072B5A0 /* FaceView.m */,
 				044E93C115A38BE70072B5A0 /* Supporting Files */,
 			);
 			path = HappinessThrowAway;
@@ -260,6 +265,7 @@
 				044E93C715A38BE70072B5A0 /* main.m in Sources */,
 				044E93CB15A38BE70072B5A0 /* AppDelegate.m in Sources */,
 				044E93D115A38BE70072B5A0 /* ViewController.m in Sources */,
+				044E93F115A38CDF0072B5A0 /* FaceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

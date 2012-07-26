@@ -21,6 +21,8 @@
 		047829C114F59F6100F89F28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478299F14F59F6100F89F28 /* Foundation.framework */; };
 		047829C914F59F6100F89F28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 047829C714F59F6100F89F28 /* InfoPlist.strings */; };
 		047829CC14F59F6100F89F28 /* ImagilolariumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 047829CB14F59F6100F89F28 /* ImagilolariumTests.m */; };
+		047829D614F5A0BC00F89F28 /* cworx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 047829D514F5A0BC00F89F28 /* cworx.jpg */; };
+		047829D814F5A14F00F89F28 /* ski.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 047829D714F5A14F00F89F28 /* ski.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +40,24 @@
 		0478299D14F59F6100F89F28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0478299F14F59F6100F89F28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		047829A114F59F6100F89F28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		047829A514F59F6100F89F28 /* Imagilolarium-Info.plist */ = {isa = PBXFileReference; path = "Imagilolarium-Info.plist"; sourceTree = "<group>"; };
+		047829A514F59F6100F89F28 /* Imagilolarium-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Imagilolarium-Info.plist"; sourceTree = "<group>"; };
 		047829A714F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		047829A914F59F6100F89F28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		047829AB14F59F6100F89F28 /* Imagilolarium-Prefix.pch */ = {isa = PBXFileReference; path = "Imagilolarium-Prefix.pch"; sourceTree = "<group>"; };
-		047829AC14F59F6100F89F28 /* ImagilolariumAppDelegate.h */ = {isa = PBXFileReference; path = ImagilolariumAppDelegate.h; sourceTree = "<group>"; };
+		047829AB14F59F6100F89F28 /* Imagilolarium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Imagilolarium-Prefix.pch"; sourceTree = "<group>"; };
+		047829AC14F59F6100F89F28 /* ImagilolariumAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagilolariumAppDelegate.h; sourceTree = "<group>"; };
 		047829AD14F59F6100F89F28 /* ImagilolariumAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagilolariumAppDelegate.m; sourceTree = "<group>"; };
 		047829B014F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		047829B314F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		047829B514F59F6100F89F28 /* ImagilolariumViewController.h */ = {isa = PBXFileReference; path = ImagilolariumViewController.h; sourceTree = "<group>"; };
+		047829B514F59F6100F89F28 /* ImagilolariumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagilolariumViewController.h; sourceTree = "<group>"; };
 		047829B614F59F6100F89F28 /* ImagilolariumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagilolariumViewController.m; sourceTree = "<group>"; };
 		047829BD14F59F6100F89F28 /* ImagilolariumTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagilolariumTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		047829BE14F59F6100F89F28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		047829C614F59F6100F89F28 /* ImagilolariumTests-Info.plist */ = {isa = PBXFileReference; path = "ImagilolariumTests-Info.plist"; sourceTree = "<group>"; };
+		047829C614F59F6100F89F28 /* ImagilolariumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImagilolariumTests-Info.plist"; sourceTree = "<group>"; };
 		047829C814F59F6100F89F28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		047829CA14F59F6100F89F28 /* ImagilolariumTests.h */ = {isa = PBXFileReference; path = ImagilolariumTests.h; sourceTree = "<group>"; };
+		047829CA14F59F6100F89F28 /* ImagilolariumTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagilolariumTests.h; sourceTree = "<group>"; };
 		047829CB14F59F6100F89F28 /* ImagilolariumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagilolariumTests.m; sourceTree = "<group>"; };
+		047829D514F5A0BC00F89F28 /* cworx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cworx.jpg; sourceTree = "<group>"; };
+		047829D714F5A14F00F89F28 /* ski.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ski.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				047829AF14F59F6100F89F28 /* MainStoryboard_iPhone.storyboard */,
 				047829B214F59F6100F89F28 /* MainStoryboard_iPad.storyboard */,
 				047829B514F59F6100F89F28 /* ImagilolariumViewController.h */,
+				047829D714F5A14F00F89F28 /* ski.jpeg */,
+				047829D514F5A0BC00F89F28 /* cworx.jpg */,
 				047829B614F59F6100F89F28 /* ImagilolariumViewController.m */,
 				047829A414F59F6100F89F28 /* Supporting Files */,
 			);
@@ -227,6 +233,8 @@
 				047829A814F59F6100F89F28 /* InfoPlist.strings in Resources */,
 				047829B114F59F6100F89F28 /* MainStoryboard_iPhone.storyboard in Resources */,
 				047829B414F59F6100F89F28 /* MainStoryboard_iPad.storyboard in Resources */,
+				047829D614F5A0BC00F89F28 /* cworx.jpg in Resources */,
+				047829D814F5A14F00F89F28 /* ski.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

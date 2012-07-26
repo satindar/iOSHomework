@@ -7,6 +7,10 @@
 //
 
 #import "PhotographersTableViewController.h"
+#import "FlickrFetcher.h"
+#import "Photographer.h"
+#import "Photo+Flickr.h"
+#import "PhotosByPhotographerTableViewController.h"
 
 @interface PhotographersTableViewController ()
 
@@ -14,114 +18,110 @@
 
 @implementation PhotographersTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize photoDatabase = _photoDatabase;
+
+
+- (void)setupFetchedResultsController
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photographer"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request 
+                                                                        managedObjectContext:self.photoDatabase.managedObjectContext 
+                                                                          sectionNameKeyPath:nil 
+                                                                                   cacheName:nil];
+}
+
+
+- (void)fetchFlickrDataIntoDocument:(UIManagedDocument *)document
+{
+    dispatch_queue_t fetchQ = dispatch_queue_create("Flickr fetcher", NULL);
+    dispatch_async(fetchQ, ^{ 
+        NSArray *photos = [FlickrFetcher recentGeoreferencedPhotos];
+        [document.managedObjectContext performBlock:^{
+            for (NSDictionary *flickrInfo in photos) {
+                [Photo photoWithFlickrInfo:flickrInfo inManagedObjectContext:document.managedObjectContext]; // photo factory method
+            }
+        }];
+    });
+    dispatch_release(fetchQ);
+}
+
+- (void)useDocument
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.photoDatabase.fileURL path]]) {
+        [self.photoDatabase saveToURL:self.photoDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            [self setupFetchedResultsController];
+            [self fetchFlickrDataIntoDocument:self.photoDatabase];
+        }];
+    } else if (self.photoDatabase.documentState == UIDocumentStateClosed) {
+        [self.photoDatabase openWithCompletionHandler:^(BOOL success) {
+            [self setupFetchedResultsController];
+        }];
+    } else if (self.photoDatabase.documentState == UIDocumentStateNormal) {
+        [self setupFetchedResultsController];
+    } 
+}
+
+
+- (void)setPhotoDatabase:(UIManagedDocument *)photoDatabase
+{
+    if (_photoDatabase != photoDatabase) {
+        _photoDatabase = photoDatabase;
+        [self useDocument];
     }
-    return self;
 }
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [super viewWillAppear:animated];
+    
+    if (!self.photoDatabase) {
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        url = [url URLByAppendingPathComponent:@"Default Photo Database"];
+        self.photoDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
+    }
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Photographer Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+    Photographer *photographer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = photographer.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d photos", [photographer.photos count]];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Photographer *photographer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([segue.destinationViewController respondsToSelector:@selector(setPhotographer:)]) {
+        [segue.destinationViewController setPhotographer:photographer];
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

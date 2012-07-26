@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RPNViewController : UIViewController
+@interface RPNViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
 
 @property (weak, nonatomic) IBOutlet UILabel *inputDisplay;
-
-@property (weak, nonatomic) IBOutlet UILabel *variablesUsedDisplay;
 
 @end

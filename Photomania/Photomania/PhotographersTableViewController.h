@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
-@interface PhotographersTableViewController : UITableViewController
+@interface PhotographersTableViewController : CoreDataTableViewController
+
+@property (nonatomic, strong) UIManagedDocument *photoDatabase;
 
 @end
