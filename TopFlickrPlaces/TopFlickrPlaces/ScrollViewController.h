@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScrollViewController : UIViewController
+@interface ScrollViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (nonatomic, strong) NSDictionary *photo;
 

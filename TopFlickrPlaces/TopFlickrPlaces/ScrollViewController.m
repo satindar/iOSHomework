@@ -12,6 +12,8 @@
 @interface ScrollViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIBarButtonItem *splitViewBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @end
 
 @implementation ScrollViewController
@@ -19,6 +21,14 @@
 @synthesize photo = _photo;
 @synthesize scrollView = _scrollView;
 @synthesize imageView = _imageView;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
+@synthesize toolbar = _toolbar;
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.splitViewController.delegate = self;
+}
 
 - (void)setPhoto:(NSDictionary *)photo
 {
@@ -36,6 +46,40 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (_splitViewBarButtonItem != splitViewBarButtonItem) {
+        NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+        if (_splitViewBarButtonItem) [toolbarItems removeObject:_splitViewBarButtonItem];
+        if (splitViewBarButtonItem) [toolbarItems insertObject:splitViewBarButtonItem atIndex:0];
+        self.toolbar.items = toolbarItems;
+        _splitViewBarButtonItem = splitViewBarButtonItem;
+    }
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc 
+   shouldHideViewController:(UIViewController *)vc 
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return (orientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)splitViewController:(UISplitViewController *)svc 
+     willHideViewController:(UIViewController *)aViewController 
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem 
+       forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = @"Photo Table";
+    self.splitViewBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc 
+     willShowViewController:(UIViewController *)aViewController 
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    self.splitViewBarButtonItem = nil;
 }
 
 - (void)viewDidLoad
