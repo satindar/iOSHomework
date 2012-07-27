@@ -44,6 +44,13 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="a9U-ms-4s3">
+                                <rect key="frame" x="136" y="5" width="512" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -53,6 +60,7 @@
                         <outlet property="imageView" destination="ufp-jd-0Se" id="aGW-mX-tkn"/>
                         <outlet property="scrollView" destination="7Ii-iG-xXF" id="10f-lR-j9f"/>
                         <outlet property="toolbar" destination="yJz-jm-Fhf" id="qqN-Ih-pWT"/>
+                        <outlet property="toolbarTitle" destination="a9U-ms-4s3" id="1gx-JX-PW9"/>
                     </connections>
                 </viewController>
             </objects>
@@ -274,25 +282,6 @@
             <point key="canvasLocation" x="3101" y="-797"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="RecentPhotosFromTopPlacesTableViewController" superclassName="TopPlacesTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPhotosFromTopPlacesTableViewController.h"/>
-        </class>
-        <class className="RecentlyViewedPhotosTableViewController" superclassName="RecentPhotosFromTopPlacesTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentlyViewedPhotosTableViewController.h"/>
-        </class>
-        <class className="ScrollViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScrollViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="TopPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
