@@ -16,9 +16,6 @@
 
 - (IBAction)refresh:(id)sender 
 {
-    // might want to use introspection to be sure sender is UIBarButtonItem
-    // (if not, it can skip the spinner)
-    // that way this method can be a little more generic
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner startAnimating];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
@@ -28,7 +25,6 @@
         NSArray *photos = [FlickrFetcher recentGeoreferencedPhotos];
 //        NSArray *places = [unorderedPlaces sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:FLICKR_PLACE_NAME ascending:YES]]];
         dispatch_async(dispatch_get_main_queue(), ^{
-//            [spinner stopAnimating];
             self.navigationItem.rightBarButtonItem = sender;
             self.photos = photos;
         });
@@ -95,7 +91,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self splitViewScrollViewController]) {
-        NSDictionary *photo = [self.recentPhotosFromTopPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        NSDictionary *photo = [self.photos objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         [[self splitViewScrollViewController] setPhoto:photo];
     }
 }

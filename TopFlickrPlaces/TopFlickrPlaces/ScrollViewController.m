@@ -26,6 +26,10 @@
 @synthesize toolbarTitle = _toolbarTitle;
 @synthesize toolbar = _toolbar;
 
+
+#define RECENTLY_DISPLAYED_PHOTOS_KEY @"ScrollViewController.RecentlyDisplayedPhotos"
+#define MAX_PHOTOS_STORED 20
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -38,6 +42,31 @@
         _photo = photo;
     }
     [self fetchPhotoAndSetTitle:photo];
+    [self updateUserDefaults];
+}
+
+- (void)updateUserDefaults
+{
+    // Store photo in NSUserDefaults array of recent phtos displayed
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *recentlyDisplayedPhotos = [[defaults objectForKey:RECENTLY_DISPLAYED_PHOTOS_KEY] mutableCopy];
+    if (!recentlyDisplayedPhotos) recentlyDisplayedPhotos = [NSMutableArray array];
+    if ([recentlyDisplayedPhotos count] >= MAX_PHOTOS_STORED) [recentlyDisplayedPhotos removeObjectAtIndex:0];
+    if (self.photo) {
+        [recentlyDisplayedPhotos addObject:self.photo];
+        [defaults setObject:recentlyDisplayedPhotos forKey:RECENTLY_DISPLAYED_PHOTOS_KEY];
+    } else {
+        if ([recentlyDisplayedPhotos count] > 0) self.photo = [recentlyDisplayedPhotos lastObject];
+    }
+    [defaults synchronize]; 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    // Store photo in NSUserDefaults array of recent photos displayed
+    [self updateUserDefaults];
 }
 
 
