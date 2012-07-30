@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		048FA45B15C5A29800ACEDDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048FA45A15C5A29800ACEDDF /* MapKit.framework */; };
 		048FA45E15C5A2B300ACEDDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048FA45D15C5A2B300ACEDDF /* CoreLocation.framework */; };
+		048FA46115C6107700ACEDDF /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FA46015C6107700ACEDDF /* PhotoAnnotation.m */; };
+		048FA46715C61A0D00ACEDDF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FA46615C61A0D00ACEDDF /* MapViewController.m */; };
 		049DC86515B47E8100FA8814 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049DC86415B47E8100FA8814 /* UIKit.framework */; };
 		049DC86715B47E8100FA8814 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049DC86615B47E8100FA8814 /* Foundation.framework */; };
 		049DC86915B47E8100FA8814 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049DC86815B47E8100FA8814 /* CoreGraphics.framework */; };
@@ -42,6 +44,10 @@
 /* Begin PBXFileReference section */
 		048FA45A15C5A29800ACEDDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		048FA45D15C5A2B300ACEDDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		048FA45F15C6107700ACEDDF /* PhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
+		048FA46015C6107700ACEDDF /* PhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
+		048FA46515C61A0D00ACEDDF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		048FA46615C61A0D00ACEDDF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		049DC86015B47E8100FA8814 /* TopFlickrPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopFlickrPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049DC86415B47E8100FA8814 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		049DC86615B47E8100FA8814 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,6 +140,8 @@
 		049DC86A15B47E8100FA8814 /* TopFlickrPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				048FA46515C61A0D00ACEDDF /* MapViewController.h */,
+				048FA46615C61A0D00ACEDDF /* MapViewController.m */,
 				049DC8C415B5423A00FA8814 /* RecentlyViewedPhotosTableViewController.h */,
 				049DC8C515B5423A00FA8814 /* RecentlyViewedPhotosTableViewController.m */,
 				049DC87315B47E8100FA8814 /* AppDelegate.h */,
@@ -142,6 +150,8 @@
 				049DC87915B47E8100FA8814 /* MainStoryboard_iPad.storyboard */,
 				049DC8A415B4811800FA8814 /* TopPlacesTableViewController.h */,
 				049DC8A515B4811800FA8814 /* TopPlacesTableViewController.m */,
+				048FA45F15C6107700ACEDDF /* PhotoAnnotation.h */,
+				048FA46015C6107700ACEDDF /* PhotoAnnotation.m */,
 				049DC8B715B49BCB00FA8814 /* RecentPhotosFromTopPlacesTableViewController.h */,
 				049DC8B815B49BCB00FA8814 /* RecentPhotosFromTopPlacesTableViewController.m */,
 				049DC8BA15B4F29100FA8814 /* ScrollViewController.h */,
@@ -298,6 +308,8 @@
 				049DC8B915B49BCB00FA8814 /* RecentPhotosFromTopPlacesTableViewController.m in Sources */,
 				049DC8BC15B4F29100FA8814 /* ScrollViewController.m in Sources */,
 				049DC8C615B5423A00FA8814 /* RecentlyViewedPhotosTableViewController.m in Sources */,
+				048FA46115C6107700ACEDDF /* PhotoAnnotation.m in Sources */,
+				048FA46715C61A0D00ACEDDF /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

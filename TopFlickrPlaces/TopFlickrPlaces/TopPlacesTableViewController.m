@@ -9,6 +9,8 @@
 #import "TopPlacesTableViewController.h"
 #import "FlickrFetcher.h"
 #import "RecentPhotosFromTopPlacesTableViewController.h"
+#import "MapViewController.h"
+#import "PhotoAnnotation.h"
 
 @interface TopPlacesTableViewController ()
 
@@ -126,6 +128,14 @@
     
 }
 
+- (NSArray *)mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.topPlaces count]];
+    for (NSDictionary *place in self.topPlaces) {
+        [annotations addObject:[PhotoAnnotation annotationForPlace:place]];
+    }
+    return annotations;
+}
 
 #pragma mark - Table view delegate
 
@@ -142,6 +152,11 @@
             });
         });
         dispatch_release(requestQueue);
+    }
+    
+    if ([segue.identifier isEqualToString:@"Show Top Places in Map View"]) {
+        // set annotations for MapView of Top Places
+        [segue.destinationViewController setAnnotations:[self mapAnnotations]];
     }
 }
 
