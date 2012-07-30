@@ -9,6 +9,10 @@
 #import "RecentPhotosFromTopPlacesTableViewController.h"
 #import "FlickrFetcher.h"
 #import "ScrollViewController.h"
+#import "PhotoAnnotation.h"
+#import "MapViewController.h"
+
+
 
 @implementation RecentPhotosFromTopPlacesTableViewController
 
@@ -83,17 +87,39 @@
 
 #pragma mark - Table view delegate
 
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
+//    if ([segue.identifier isEqualToString:@"Show Recent Photo From Top Place"]) {
+//        NSDictionary *photo = [self.recentPhotosFromTopPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+//        [segue.destinationViewController setPhoto:photo];
+//    }
+//}
+
+- (NSArray *)mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.recentPhotosFromTopPlaces count]];
+    for (NSDictionary *photo in self.recentPhotosFromTopPlaces) {
+        [annotations addObject:[PhotoAnnotation annotationForPhoto:photo]];
+    }
+    return annotations;
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
-    if ([segue.identifier isEqualToString:@"Show Recent Photo From Top Place"]) {
-        NSDictionary *photo = [self.recentPhotosFromTopPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        [segue.destinationViewController setPhoto:photo];
+    if ([segue.identifier isEqualToString:@"Show Recent Georeferenced Photo"]) {
+        [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
+    }
+    
+    if ([segue.identifier isEqualToString:@"Show Map Of Recent Photos From Top Places"]) {
+        // set annotations for MapView of Top Places
+        [segue.destinationViewController setAnnotations:[self mapAnnotations]];
     }
 }
 
-@end
 
+@end
 
 
 

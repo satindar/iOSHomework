@@ -7,6 +7,10 @@
 //
 
 #import "MapViewController.h"
+#import "PhotoAnnotation.h"
+#import "TopPlacesTableViewController.h"
+#import "RecentlyViewedPhotosTableViewController.h"
+#import "RecentPhotosFromTopPlacesTableViewController.h"
 
 @interface MapViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -79,6 +83,39 @@
     [self setMapView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (NSArray *)topPlaces
+{
+    NSMutableArray *topPlaces = [NSMutableArray arrayWithCapacity:[self.annotations count]];
+    for (PhotoAnnotation *annotation in self.annotations) {
+        [topPlaces addObject:annotation.topPlace];
+    }
+    return topPlaces;
+}
+
+- (NSArray *)photos
+{
+    NSMutableArray *photos = [NSMutableArray arrayWithCapacity:[self.annotations count]];
+    for (PhotoAnnotation *annotation in self.annotations) {
+        [photos addObject:annotation.photo];
+    }
+    return photos;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show List Of Top Places"]) {
+        [segue.destinationViewController setTopPlaces:[self topPlaces]];
+    }
+    
+    if ([segue.identifier isEqualToString:@"Show List Of Recent Photos From Top Places"]) {
+        [segue.destinationViewController setRecentPhotosFromTopPlaces:[self photos]];
+    }
+    
+    if ([segue.identifier isEqualToString:@"Show List Of Recently Viewed Photos"]) {
+        [segue.destinationViewController setPhotos:[self photos]];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

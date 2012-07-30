@@ -35,10 +35,11 @@
     return nil;
 }
 
-//- (NSString *)subtitle
-//{
-//    return [self.photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
-//}
+- (NSString *)subtitle
+{
+    if (self.photo) return [self.photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
+    return nil;
+}
 
 - (CLLocationCoordinate2D)coordinate
 {

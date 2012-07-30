@@ -61,7 +61,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self refresh:self.navigationItem.rightBarButtonItem];
+    if (!self.topPlaces) [self refresh:self.navigationItem.rightBarButtonItem];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -125,7 +125,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+   
 }
 
 - (NSArray *)mapAnnotations

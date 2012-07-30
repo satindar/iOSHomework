@@ -9,6 +9,10 @@
 #import "RecentlyViewedPhotosTableViewController.h"
 #import "FlickrFetcher.h"
 #import "ScrollViewController.h"
+#import "PhotoAnnotation.h"
+#import "MapViewController.h"
+
+
 
 @implementation RecentlyViewedPhotosTableViewController
 
@@ -105,6 +109,14 @@
     }
 }
 
+- (NSArray *)mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
+    for (NSDictionary *photo in self.photos) {
+        [annotations addObject:[PhotoAnnotation annotationForPhoto:photo]];
+    }
+    return annotations;
+}
 
 #pragma mark - Table view delegate
 
@@ -117,6 +129,18 @@
             [segue.destinationViewController setPhoto:photo];
         }
     }
+    
+    if ([segue.identifier isEqualToString:@"Show Map Of Recently Viewed Photos"]) {
+        // set annotations for MapView of Top Places
+        [segue.destinationViewController setAnnotations:[self mapAnnotations]];
+    }
 }
+
+
+#pragma mark - Table view delegate
+
+
+    
+    
 
 @end
