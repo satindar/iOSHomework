@@ -111,6 +111,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Places" id="90g-NJ-KTc">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="tnj-ZS-sv7">
+                            <connections>
+                                <segue destination="hU5-Xi-Nzx" kind="push" id="NIq-Ii-YkG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Refresh" id="V80-zU-RSO">
                             <connections>
                                 <action selector="refresh:" destination="dpW-gz-bwh" id="vsY-XJ-444"/>
@@ -120,7 +125,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="4298" y="-1600"/>
+            <point key="canvasLocation" x="4574" y="-1500"/>
         </scene>
         <!--Recent Photos From Top Places Table View Controller-->
         <scene sceneID="PxX-Ia-7d2">
@@ -167,7 +172,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="4824" y="-1600"/>
+            <point key="canvasLocation" x="5100" y="-1500"/>
         </scene>
         <!--Recently Viewed Photos Table View Controller - Recent Photos-->
         <scene sceneID="jLU-hv-14j">
@@ -211,6 +216,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recent Photos" id="MAk-TB-ftC">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="jTS-ms-R4u">
+                            <connections>
+                                <segue destination="i4T-tU-4Mk" kind="push" id="e5s-7L-C6y"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Refresh" id="8n2-yP-7X3">
                             <connections>
                                 <action selector="refresh:" destination="Hgf-qH-hGH" id="6Cf-Yb-5J9"/>
@@ -220,7 +230,34 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="4313" y="-582"/>
+            <point key="canvasLocation" x="4569" y="-326"/>
+        </scene>
+        <!--View Controller - Top Places-->
+        <scene sceneID="WsD-ZN-p6Z">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJ9-0M-52x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hU5-Xi-Nzx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J84-SP-jyc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="739"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="KSM-0J-olO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="739"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Top Places" id="dgd-Kc-wyh">
+                        <barButtonItem key="leftBarButtonItem" title="List" id="uN2-rR-IAj">
+                            <connections>
+                                <segue destination="dpW-gz-bwh" kind="push" id="s6b-MA-dFK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4574" y="-2592"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="jzw-Yz-D1b">
@@ -240,7 +277,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="3787" y="-1600"/>
+            <point key="canvasLocation" x="3931" y="-1500"/>
         </scene>
         <!--Navigation Controller - Recent Photos-->
         <scene sceneID="wgY-15-tcM">
@@ -260,7 +297,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="3787" y="-582"/>
+            <point key="canvasLocation" x="3931" y="-338"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LCk-UZ-yYR">
@@ -281,10 +318,60 @@
             </objects>
             <point key="canvasLocation" x="3101" y="-797"/>
         </scene>
+        <!--View Controller - Top Places-->
+        <scene sceneID="IdE-Hs-Mlk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTm-eu-co8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="i4T-tU-4Mk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBr-AG-3dZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="739"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="dJB-lI-Un3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="739"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Top Places" id="dxy-zm-Cs9">
+                        <barButtonItem key="leftBarButtonItem" title="List" id="SNl-hq-HV5">
+                            <connections>
+                                <segue destination="Hgf-qH-hGH" kind="push" id="1Tp-Ro-YAN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4569" y="865"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="RecentPhotosFromTopPlacesTableViewController" superclassName="TopPlacesTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPhotosFromTopPlacesTableViewController.h"/>
+        </class>
+        <class className="RecentlyViewedPhotosTableViewController" superclassName="RecentPhotosFromTopPlacesTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentlyViewedPhotosTableViewController.h"/>
+        </class>
+        <class className="ScrollViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScrollViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="toolbarTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TopPlacesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="J3Z-6r-227"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -41,7 +41,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="pIT-m4-cMk" kind="push" id="wIo-Hv-If4"/>
+                                    <segue destination="pIT-m4-cMk" kind="push" identifier="Show Recent Photos From Top Places" id="wIo-Hv-If4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -284,24 +284,6 @@
             <point key="canvasLocation" x="828" y="300"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="RecentPhotosFromTopPlacesTableViewController" superclassName="TopPlacesTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPhotosFromTopPlacesTableViewController.h"/>
-        </class>
-        <class className="RecentlyViewedPhotosTableViewController" superclassName="RecentPhotosFromTopPlacesTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentlyViewedPhotosTableViewController.h"/>
-        </class>
-        <class className="ScrollViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScrollViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="TopPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -131,16 +131,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
-    
-    dispatch_queue_t requestQueue = dispatch_queue_create("flickr requester", NULL);
-    dispatch_async(requestQueue, ^{
-        NSArray *photosForPlace = [FlickrFetcher photosInPlace:[self.topPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row] maxResults:50];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [segue.destinationViewController setRecentPhotosFromTopPlaces:photosForPlace];
+    if ([segue.identifier isEqualToString:@"Show Recent Photos From Top Places"]) {
+        [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
+        
+        dispatch_queue_t requestQueue = dispatch_queue_create("flickr requester", NULL);
+        dispatch_async(requestQueue, ^{
+            NSArray *photosForPlace = [FlickrFetcher photosInPlace:[self.topPlaces objectAtIndex:[self.tableView indexPathForSelectedRow].row] maxResults:50];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [segue.destinationViewController setRecentPhotosFromTopPlaces:photosForPlace];
+            });
         });
-    });
-    dispatch_release(requestQueue);
+        dispatch_release(requestQueue);
+    }
 }
 
 

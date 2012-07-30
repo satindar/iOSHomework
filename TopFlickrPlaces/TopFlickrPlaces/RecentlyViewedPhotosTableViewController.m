@@ -101,10 +101,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
     if ([segue.identifier isEqualToString:@"Show Recent Georeferenced Photo"]) {
-        NSDictionary *photo = [self.photos objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        [segue.destinationViewController setPhoto:photo];
+        [segue.destinationViewController setTitle:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text];
+        if ([segue.identifier isEqualToString:@"Show Recent Georeferenced Photo"]) {
+            NSDictionary *photo = [self.photos objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+            [segue.destinationViewController setPhoto:photo];
+        }
     }
 }
 
