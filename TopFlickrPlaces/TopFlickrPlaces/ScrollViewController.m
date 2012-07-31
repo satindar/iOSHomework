@@ -8,13 +8,15 @@
 
 #import "ScrollViewController.h"
 #import "FlickrFetcher.h"
+#import "MapViewController.h"
 
-@interface ScrollViewController () <UIScrollViewDelegate>
+@interface ScrollViewController () <UIScrollViewDelegate> 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) UIBarButtonItem *splitViewBarButtonItem;
 @property (weak, nonatomic) IBOutlet UILabel *toolbarTitle;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityWheel;
 @end
 
 @implementation ScrollViewController
@@ -25,6 +27,7 @@
 @synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
 @synthesize toolbarTitle = _toolbarTitle;
 @synthesize toolbar = _toolbar;
+@synthesize activityWheel = _activityWheel;
 
 
 #define RECENTLY_DISPLAYED_PHOTOS_KEY @"ScrollViewController.RecentlyDisplayedPhotos"
@@ -34,16 +37,24 @@
 {
     [super awakeFromNib];
     self.splitViewController.delegate = self;
+    [self.activityWheel startAnimating];
 }
+
+
 
 - (void)setPhoto:(NSDictionary *)photo
 {
+    
     if (_photo != photo) {
         _photo = photo;
     }
+    [self.activityWheel startAnimating];
     [self fetchPhotoAndSetTitle:photo];
     [self updateUserDefaults];
 }
+
+
+
 
 - (void)updateUserDefaults
 {
@@ -124,6 +135,7 @@
 - (void)viewDidUnload
 {
     [self setToolbarTitle:nil];
+    [self setActivityWheel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -158,6 +170,7 @@
         NSString *title = [photo valueForKey:FLICKR_PHOTO_TITLE];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setupPhotoInView:image withTitle:title];
+            [self.activityWheel stopAnimating];
         });
     });
     dispatch_release(requestQueue);

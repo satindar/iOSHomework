@@ -18,7 +18,7 @@
                     </connections>
                 </splitViewController>
             </objects>
-            <point key="canvasLocation" x="2052" y="-200"/>
+            <point key="canvasLocation" x="943" y="-320"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="0Bq-nh-JuV">
@@ -51,12 +51,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="center" hidesWhenStopped="YES" style="whiteLarge" id="Uor-As-QTg">
+                                <rect key="frame" x="365" y="484" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="by2-4X-SdO"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
+                        <outlet property="activityWheel" destination="Uor-As-QTg" id="YP5-Ex-40N"/>
                         <outlet property="imageView" destination="ufp-jd-0Se" id="aGW-mX-tkn"/>
                         <outlet property="scrollView" destination="7Ii-iG-xXF" id="10f-lR-j9f"/>
                         <outlet property="toolbar" destination="yJz-jm-Fhf" id="qqN-Ih-pWT"/>
@@ -64,7 +69,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="3036" y="516"/>
+            <point key="canvasLocation" x="1927" y="396"/>
         </scene>
         <!--Top Places Table View Controller - Top Places-->
         <scene sceneID="kkF-vy-vlY">
@@ -125,7 +130,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="4556" y="-1493"/>
+            <point key="canvasLocation" x="3447" y="-1613"/>
         </scene>
         <!--Recent Photos From Top Places Table View Controller - Recent Photos-->
         <scene sceneID="PxX-Ia-7d2">
@@ -178,7 +183,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="5100" y="-1500"/>
+            <point key="canvasLocation" x="3991" y="-1620"/>
         </scene>
         <!--Recently Viewed Photos Table View Controller - Recent Photos-->
         <scene sceneID="jLU-hv-14j">
@@ -236,7 +241,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="4569" y="-326"/>
+            <point key="canvasLocation" x="3460" y="-446"/>
         </scene>
         <!--Map View Controller - Top Places-->
         <scene sceneID="WsD-ZN-p6Z">
@@ -263,10 +268,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="KSM-0J-olO" id="x67-n7-dM7"/>
+                        <segue destination="4kI-4f-d3T" kind="push" identifier="Show Recent Photos From Top Places On Map" id="Ose-rZ-IUH"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="4574" y="-2592"/>
+            <point key="canvasLocation" x="3442" y="-2936"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="jzw-Yz-D1b">
@@ -286,7 +292,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="3931" y="-1500"/>
+            <point key="canvasLocation" x="2822" y="-1620"/>
         </scene>
         <!--Navigation Controller - Recent Photos-->
         <scene sceneID="wgY-15-tcM">
@@ -306,7 +312,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="3931" y="-338"/>
+            <point key="canvasLocation" x="2822" y="-458"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LCk-UZ-yYR">
@@ -325,7 +331,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="3101" y="-797"/>
+            <point key="canvasLocation" x="1992" y="-917"/>
         </scene>
         <!--Map View Controller - Recent Photos-->
         <scene sceneID="IdE-Hs-Mlk">
@@ -355,7 +361,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="4569" y="865"/>
+            <point key="canvasLocation" x="3460" y="745"/>
         </scene>
         <!--Map View Controller - Recent Photos-->
         <scene sceneID="qGt-0l-v6a">
@@ -388,7 +394,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="5100" y="-2592"/>
+            <point key="canvasLocation" x="3968" y="-2936"/>
         </scene>
     </scenes>
     <classes>
@@ -407,6 +413,7 @@
         <class className="ScrollViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScrollViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="activityWheel" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
@@ -422,4 +429,9 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="J3Z-6r-227"/>
+        <segue reference="Ose-rZ-IUH"/>
+        <segue reference="at4-m9-u8O"/>
+    </inferredMetricsTieBreakers>
 </document>
